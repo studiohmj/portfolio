@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -250,6 +250,11 @@
       .profile-tag-row { grid-template-columns: 1fr; gap: 2rem; }
       .profile-timeline__item { grid-template-columns: 90px 1fr; gap: 0 1rem; }
     }
+    @media (max-width: 480px) {
+      .profile-info-grid { grid-template-columns: 1fr; }
+      .profile-timeline__item { grid-template-columns: 72px 1fr; gap: 0 0.75rem; }
+      .profile-hero { gap: 2rem; }
+    }
 
     /* ── Inline expand toggle ── */
     .pexp-btn {
@@ -356,7 +361,7 @@
         <div class="profile-hero__right">
           <span class="profile-hero__label">Branding Designer</span>
           <div class="profile-hero__nameblock">
-            <img src="profile-photo.jpg" alt="장훈민" class="profile-hero__face" />
+            <img src="프로필.jpg" alt="장훈민" class="profile-hero__face" />
             <div>
               <h1 class="profile-hero__name">장훈민</h1>
               <p class="profile-hero__role">Jang Hoon Min</p>

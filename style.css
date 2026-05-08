@@ -56,7 +56,7 @@ body.dark-mode {
   --text-soft:    #D6E8F5;
   --t1:           #FFFFFF;
   --t2:           #D6E8F5;
-  --primary:      #93C5FD;
+  --primary:      #7DD3FC;
   --primary-soft: #BAD9FF;
   --line:         rgba(255, 255, 255, 0.1);
 
@@ -374,7 +374,8 @@ body.dark-mode .hero-wrapper {
   --t1:         #EFF6FF;
   --t2:         #93B4D8;
   --t3:         rgba(255, 255, 255, 0.52);
-  --primary:    #60A5FA;
+  --primary:    #7DD3FC;
+  --primary-soft: #BAD9FF;
   --border:     rgba(255, 255, 255, 0.08);
   --border-mid: rgba(255, 255, 255, 0.18);
   color: #EFF6FF;
@@ -591,6 +592,14 @@ body.dark-mode .hero-wrapper::before {
 .hero-wrapper .hero__profile-link { color: var(--t1); }
 .hero-wrapper .btn--ghost { color: var(--t1); border-color: rgba(15, 23, 42, 0.75); }
 body.dark-mode .hero-wrapper .hero__profile-link { color: #fff; }
+body.dark-mode .hero-wrapper .btn--primary {
+  color: #0A1628;
+}
+body.dark-mode .hero-wrapper .btn--primary:hover {
+  background: #BAD9FF;
+  border-color: #BAD9FF;
+  color: #0A1628;
+}
 body.dark-mode .hero-wrapper .btn--ghost {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.5);
