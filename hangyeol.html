@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>한결 — Jang Hoon Min</title>
   <meta name="description" content="한결 — 노인 미술치료 브랜드 아이덴티티 케이스 스터디" />
   <link rel="stylesheet" href="style.css" />
@@ -39,7 +40,7 @@
       --hg-el:   16px;
       --hg-font: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-    body.dark-mode {
+    html.dark-mode {
       --hg-t1:  #FFFFFF;
       --hg-t2:  #D6E8F5;
       --hg-t3:  rgba(255, 255, 255, 0.6);
@@ -47,8 +48,8 @@
       --hg-off: #0C1527;
       --hg-cr:  #1A1204;
     }
-    body.dark-mode .hg-imgblk__bar { background: var(--hg-off); }
-    body.dark-mode .hg-value       { background: var(--hg-off); }
+    html.dark-mode .hg-imgblk__bar { background: var(--hg-off); }
+    html.dark-mode .hg-value       { background: var(--hg-off); }
 
     /* ── Wrapper ────────────────────────────────── */
     .hg {
@@ -136,9 +137,9 @@
     .hg-hero__title {
       font-size: clamp(56px, 8vw, 96px);
       font-weight: 800; letter-spacing: -0.045em; line-height: 0.92;
-      color: var(--hg-t1); margin-bottom: 28px;
+      color: var(--hg); margin-bottom: 28px;
     }
-    .hg-hero__title span { color: var(--hg); }
+    .hg-hero__title span { color: inherit; }
     .hg-hero__sub {
       font-size: 18px; font-weight: 400;
       line-height: 1.7; color: var(--hg-t2); max-width: 560px;
@@ -396,6 +397,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="forcare.html" class="proj-pager__link">← Forcare</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="neulpureun.html" class="proj-pager__link">Neulpureun →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -818,3 +825,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+

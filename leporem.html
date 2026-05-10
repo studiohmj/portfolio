@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>Leporem — Jang Hoon Min</title>
   <meta name="description" content="Leporem — 시각장애인을 위한 향수 브랜드 아이덴티티" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -327,6 +328,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="neulpureun.html" class="proj-pager__link">← Neulpureun</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="ikseondong.html" class="proj-pager__link">Ikseondong →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -728,3 +735,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+

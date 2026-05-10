@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>이화공부방 — Jang Hoon Min</title>
   <meta name="description" content="이화공부방 — 30년 경력 원장의 교육 철학을 담은 초등 학습 전문 공부방 랜딩 페이지 디자인" />
   <link rel="stylesheet" href="style.css" />
@@ -40,10 +41,10 @@
     .iw-hero__year { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: var(--t3); }
     .iw-hero__title {
       font-size: clamp(52px, 8vw, 96px); font-weight: 900; letter-spacing: -0.04em;
-      line-height: 0.95; color: var(--t1); margin-bottom: 8px;
+      line-height: 0.95; color: var(--primary); margin-bottom: 8px;
     }
     .iw-hero__title span { display: inline; }
-    .iw-hero__title .iw-accent { color: var(--iw); }
+    .iw-hero__title .iw-accent { color: inherit; }
     .iw-hero__tagline {
       font-size: clamp(16px, 2.2vw, 20px); color: var(--t2); letter-spacing: -0.02em;
       line-height: 1.6; margin: 28px 0 48px; max-width: 600px;
@@ -271,6 +272,13 @@
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
     <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="edustay.html" class="proj-pager__link">← Edustay</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="nunchi.html" class="proj-pager__link">Nunchi →</a>
+  </div>
+
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="index.html#about" class="mobile-link">About</a></li>
@@ -576,3 +584,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+

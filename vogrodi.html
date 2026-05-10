@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>Vogrodi — Jang Hoon Min</title>
   <meta name="description" content="Vogrodi — 패션 경매 앱 브랜드 아이덴티티 & UX 케이스 스터디" />
   <link rel="stylesheet" href="style.css" />
@@ -37,7 +38,7 @@
       --vg-el:    16px;
       --vg-font:  'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, sans-serif;
     }
-    body.dark-mode {
+    html.dark-mode {
       --vg-t1:  #FFFFFF;
       --vg-t2:  #D6E8F5;
       --vg-t3:  rgba(255, 255, 255, 0.6);
@@ -47,9 +48,9 @@
       --vg-05:  rgba(90, 140, 230, 0.08);
       --vg-10:  rgba(90, 140, 230, 0.14);
     }
-    body.dark-mode .vg-imgblk__bar { background: var(--vg-off); }
-    body.dark-mode .vg-feat        { background: var(--vg-off); }
-    body.dark-mode .vg-out         { background: var(--vg-off); }
+    html.dark-mode .vg-imgblk__bar { background: var(--vg-off); }
+    html.dark-mode .vg-feat        { background: var(--vg-off); }
+    html.dark-mode .vg-out         { background: var(--vg-off); }
 
     /* ── Wrapper & Grid ─────────────────────────── */
     .vg {
@@ -418,6 +419,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="ikseondong.html" class="proj-pager__link">← Ikseondong</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="pacemaker.html" class="proj-pager__link">Pacemaker →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -1123,3 +1130,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+

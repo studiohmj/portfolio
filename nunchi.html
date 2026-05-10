@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>눈치코치 — Jang Hoon Min</title>
   <meta name="description" content="눈치코치 — 사회적 상황 시뮬레이션 앱 & 웹 서비스 UX/UI 디자인" />
   <link rel="stylesheet" href="style.css" />
@@ -177,6 +178,13 @@
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
     <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="ihwa.html" class="proj-pager__link">← Ihwa</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="portfolio-web.html" class="proj-pager__link">Portfolio Web →</a>
+  </div>
+
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="index.html#about" class="mobile-link">About</a></li>
@@ -421,3 +429,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+

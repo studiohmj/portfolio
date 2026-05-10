@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>포트폴리오 웹디자인 — Jang Hoon Min</title>
   <meta name="description" content="포트폴리오 웹디자인 — 브랜딩 포트폴리오 웹사이트 직접 설계 및 구현" />
   <link rel="stylesheet" href="style.css" />
@@ -24,6 +25,13 @@
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
     <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="nunchi.html" class="proj-pager__link">← Nunchi</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="leporem.html" class="proj-pager__link">Leporem →</a>
+  </div>
+
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="index.html#about" class="mobile-link">About</a></li>
@@ -98,3 +106,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+

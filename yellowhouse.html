@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>Yellow House — Jang Hoon Min</title>
   <meta name="description" content="Yellow House — 예술이 일상에 스며드는 카페 브랜드 아이덴티티 케이스 스터디" />
   <link rel="stylesheet" href="style.css" />
@@ -23,6 +24,7 @@
 
     :root {
       --yh:      #FFF100;
+      --yh-point: #F0C800;
       --yh-sky:  #BAE3F9;
       --yh-dark: #1A1A1A;
       --yh-05:   rgba(255, 241, 0, 0.08);
@@ -39,16 +41,16 @@
       --yh-el:   16px;
       --yh-font: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-    body.dark-mode {
+    html.dark-mode {
       --yh-t1:  #FFFFFF;
       --yh-t2:  #D6E8F5;
       --yh-t3:  rgba(255, 255, 255, 0.6);
       --yh-bdr: rgba(255, 255, 255, 0.1);
       --yh-off: #0C1527;
     }
-    body.dark-mode .yh-imgblk__bar { background: var(--yh-off); }
-    body.dark-mode .yh-out__h { color: var(--yh-t1); }
-    body.dark-mode .yh-out__bar { background: rgba(255,255,255,0.25); }
+    html.dark-mode .yh-imgblk__bar { background: var(--yh-off); }
+    html.dark-mode .yh-out__h { color: var(--yh-t1); }
+    html.dark-mode .yh-out__bar { background: rgba(255,255,255,0.25); }
 
     /* ── Wrapper & Grid ─────────────────────────── */
     .yh {
@@ -125,7 +127,7 @@
     }
     .yh-body + .yh-body { margin-top: var(--yh-el); }
     .yh-body strong { font-weight: 600; color: var(--yh-t1); }
-    .yh-body em     { font-style: normal; color: #9a8400; font-weight: 600; }
+    .yh-body em     { font-style: normal; color: var(--yh-point); font-weight: 600; }
     .yh-cap {
       font-family: var(--yh-font);
       font-size: 13px;
@@ -192,10 +194,10 @@
       font-weight: 800;
       letter-spacing: -0.05em;
       line-height: 0.9;
-      color: var(--yh-dark);
+      color: var(--yh-point);
       margin-bottom: 28px;
     }
-    .yh-hero__title span { color: #9a8400; }
+    .yh-hero__title span { color: inherit; }
     .yh-hero__sub {
       font-family: var(--yh-font);
       font-size: 18px;
@@ -283,7 +285,7 @@
       letter-spacing: -0.02em;
       color: var(--yh-t1);
     }
-    .yh-insight__txt em { font-style: normal; color: #9a8400; }
+    .yh-insight__txt em { font-style: normal; color: var(--yh-point); }
 
     /* ════════════════════════════════════════════
        OBSERVATION LIST
@@ -378,7 +380,7 @@
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #9a8400;
+      color: var(--yh-point);
       padding-top: 2px;
       flex-shrink: 0;
     }
@@ -416,7 +418,7 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #9a8400;
+      color: var(--yh-point);
       margin-bottom: 14px;
     }
     .yh-motif__body {
@@ -483,7 +485,7 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #9a8400;
+      color: var(--yh-point);
       margin-bottom: 10px;
     }
     .yh-color-note__txt {
@@ -632,7 +634,7 @@
     .yh-next__link--prev { font-size: 20px; color: var(--yh-t3); }
     .yh-next__link--prev:hover { color: var(--yh-t1); }
     .yh-next__link--next { font-size: 32px; color: var(--yh-t1); }
-    .yh-next__link--next:hover { color: #9a8400; }
+    .yh-next__link--next:hover { color: var(--yh-point); }
     .yh-next__arrow { transition: transform 0.2s; }
     .yh-next__link--next:hover .yh-next__arrow { transform: translateX(6px); }
 
@@ -696,6 +698,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="pacemaker.html" class="proj-pager__link">← Pacemaker</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="forcare.html" class="proj-pager__link">Forcare →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -1244,3 +1252,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+

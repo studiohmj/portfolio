@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>청정익선 — Jang Hoon Min</title>
   <meta name="description" content="청정익선 — 익선동 환경 보호 캠페인 브랜드 케이스 스터디" />
   <link rel="stylesheet" href="style.css" />
@@ -37,7 +38,7 @@
       --ik-el:      16px;
       --ik-font:    'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-    body.dark-mode {
+    html.dark-mode {
       --ik-t1:      #FFFFFF;
       --ik-t2:      #D6E8F5;
       --ik-t3:      rgba(255, 255, 255, 0.6);
@@ -47,9 +48,9 @@
       --ik-blue-05: rgba(90, 140, 230, 0.08);
       --ik-blue-10: rgba(90, 140, 230, 0.14);
     }
-    body.dark-mode .cs-imgblk__bar { background: var(--ik-off); }
-    body.dark-mode .cs-feat        { background: var(--ik-off); }
-    body.dark-mode .cs-out         { background: var(--ik-off); }
+    html.dark-mode .cs-imgblk__bar { background: var(--ik-off); }
+    html.dark-mode .cs-feat        { background: var(--ik-off); }
+    html.dark-mode .cs-out         { background: var(--ik-off); }
 
     /* ── Wrapper & Grid ─────────────────────────── */
     .cs {
@@ -728,6 +729,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="leporem.html" class="proj-pager__link">← Leporem</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="vogrodi.html" class="proj-pager__link">Vogrodi →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -1460,3 +1467,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+

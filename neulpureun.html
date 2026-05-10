@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>늘푸른 — Jang Hoon Min</title>
   <meta name="description" content="늘푸른 — 은퇴 노인을 위한 복합 문화 공간 브랜드 케이스 스터디" />
   <link rel="stylesheet" href="style.css" />
@@ -39,15 +40,15 @@
       --np-el:   16px;
       --np-font: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-    body.dark-mode {
+    html.dark-mode {
       --np-t1:  #FFFFFF;
       --np-t2:  #D6E8F5;
       --np-t3:  rgba(255, 255, 255, 0.6);
       --np-bdr: rgba(255, 255, 255, 0.1);
       --np-off: #0C1527;
     }
-    body.dark-mode .np-imgblk__bar { background: var(--np-off); }
-    body.dark-mode .np-value       { background: var(--np-off); }
+    html.dark-mode .np-imgblk__bar { background: var(--np-off); }
+    html.dark-mode .np-value       { background: var(--np-off); }
 
     /* ── Wrapper ────────────────────────────────── */
     .np {
@@ -134,9 +135,9 @@
     .np-hero__title {
       font-size: clamp(56px, 8vw, 96px);
       font-weight: 800; letter-spacing: -0.045em; line-height: 0.92;
-      color: var(--np-t1); margin-bottom: 28px;
+      color: var(--np); margin-bottom: 28px;
     }
-    .np-hero__title span { color: var(--np); }
+    .np-hero__title span { color: inherit; }
     .np-hero__sub {
       font-size: 18px; font-weight: 400;
       line-height: 1.7; color: var(--np-t2); max-width: 560px;
@@ -394,6 +395,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="hangyeol.html" class="proj-pager__link">← Hangyeol</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="leporem.html" class="proj-pager__link">Leporem →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -816,3 +823,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+

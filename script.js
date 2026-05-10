@@ -58,17 +58,22 @@ window.scrollTo(0, 0);
   const btn  = document.getElementById('themeToggle');
   const icon = btn.querySelector('.theme-toggle__icon');
 
-  /* Always start in light mode */
-  icon.textContent = '☽';
+  /* Restore saved theme */
+  if (localStorage.getItem('portfolio-theme-v2') === 'dark') {
+    document.documentElement.classList.add('dark-mode');
+    icon.textContent = '☀';
+  } else {
+    icon.textContent = '☽';
+  }
 
   btn.addEventListener('click', () => {
-    const isDark = document.body.classList.contains('dark-mode');
+    const isDark = document.documentElement.classList.contains('dark-mode');
     if (isDark) {
-      document.body.classList.remove('dark-mode');
+      document.documentElement.classList.remove('dark-mode');
       icon.textContent = '☽';
       localStorage.setItem('portfolio-theme-v2', 'light');
     } else {
-      document.body.classList.add('dark-mode');
+      document.documentElement.classList.add('dark-mode');
       icon.textContent = '☀';
       localStorage.setItem('portfolio-theme-v2', 'dark');
     }

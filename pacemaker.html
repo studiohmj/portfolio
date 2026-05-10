@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>Pacemaker — Jang Hoon Min</title>
   <meta name="description" content="Pacemaker — 20대 취업 조력 브랜드 UX 케이스 스터디" />
   <link rel="stylesheet" href="style.css" />
@@ -37,15 +38,15 @@
       --pm-el:    16px;
       --pm-font:  'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-    body.dark-mode {
+    html.dark-mode {
       --pm-t1:  #FFFFFF;
       --pm-t2:  #D6E8F5;
       --pm-t3:  rgba(255, 255, 255, 0.6);
       --pm-bdr: rgba(255, 255, 255, 0.1);
       --pm-off: #0C1527;
     }
-    body.dark-mode .pm-imgblk__bar { background: var(--pm-off); }
-    body.dark-mode .pm-out         { background: var(--pm-off); }
+    html.dark-mode .pm-imgblk__bar { background: var(--pm-off); }
+    html.dark-mode .pm-out         { background: var(--pm-off); }
 
     /* ── Wrapper & Grid ─────────────────────────── */
     .pm {
@@ -778,6 +779,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="vogrodi.html" class="proj-pager__link">← Vogrodi</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="yellowhouse.html" class="proj-pager__link">Yellow House →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -1558,3 +1565,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+

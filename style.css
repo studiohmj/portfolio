@@ -48,7 +48,7 @@
 }
 
 /* Dark mode — deep sky navy */
-body.dark-mode {
+html.dark-mode {
   --bg:           #080E1A;
   --bg-alt:       #0C1527;
   --surface:      #121D30;
@@ -166,7 +166,7 @@ em {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
-body.dark-mode .nav:not(.scrolled) {
+html.dark-mode .nav:not(.scrolled) {
   background: rgba(8, 14, 26, 0.55);
 }
 
@@ -176,7 +176,7 @@ body.dark-mode .nav:not(.scrolled) {
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-color: var(--border);
 }
-body.dark-mode .nav.scrolled {
+html.dark-mode .nav.scrolled {
   background: rgba(10, 15, 30, 0.92);
 }
 
@@ -205,16 +205,16 @@ body.dark-mode .nav.scrolled {
   background: rgba(15, 23, 42, 0.8);
   filter: none;
 }
-body.dark-mode .nav:not(.scrolled) .nav__logo,
-body.dark-mode .nav:not(.scrolled) .nav__links a {
+html.dark-mode .nav:not(.scrolled) .nav__logo,
+html.dark-mode .nav:not(.scrolled) .nav__links a {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
-body.dark-mode .nav:not(.scrolled) .nav__links a:hover,
-body.dark-mode .nav:not(.scrolled) .nav__links a.active-link {
+html.dark-mode .nav:not(.scrolled) .nav__links a:hover,
+html.dark-mode .nav:not(.scrolled) .nav__links a.active-link {
   color: #fff;
 }
-body.dark-mode .nav:not(.scrolled) .nav__hamburger span {
+html.dark-mode .nav:not(.scrolled) .nav__hamburger span {
   background: rgba(255, 255, 255, 0.9);
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
 }
@@ -290,7 +290,7 @@ body.dark-mode .nav:not(.scrolled) .nav__hamburger span {
   border-color: var(--primary);
   color: var(--primary);
 }
-body.dark-mode .nav:not(.scrolled) .theme-toggle {
+html.dark-mode .nav:not(.scrolled) .theme-toggle {
   background: rgba(8, 14, 26, 0.85);
   border-color: rgba(255, 255, 255, 0.2);
   color: #EFF6FF;
@@ -368,7 +368,7 @@ body.dark-mode .nav:not(.scrolled) .theme-toggle {
 }
 
 /* ── 다크모드 override ──────────────────────────────── */
-body.dark-mode .hero-wrapper {
+html.dark-mode .hero-wrapper {
   background-color: #060D18;
   background-image: url('다크모드.png');
   --t1:         #EFF6FF;
@@ -380,7 +380,7 @@ body.dark-mode .hero-wrapper {
   --border-mid: rgba(255, 255, 255, 0.18);
   color: #EFF6FF;
 }
-body.dark-mode .hero-wrapper::before {
+html.dark-mode .hero-wrapper::before {
   background: linear-gradient(
     to right,
     rgba(4, 10, 24, 0.78) 0%,
@@ -591,16 +591,16 @@ body.dark-mode .hero-wrapper::before {
 .hero__profile-link:hover { color: var(--primary); }
 .hero-wrapper .hero__profile-link { color: var(--t1); }
 .hero-wrapper .btn--ghost { color: var(--t1); border-color: rgba(15, 23, 42, 0.75); }
-body.dark-mode .hero-wrapper .hero__profile-link { color: #fff; }
-body.dark-mode .hero-wrapper .btn--primary {
+html.dark-mode .hero-wrapper .hero__profile-link { color: #fff; }
+html.dark-mode .hero-wrapper .btn--primary {
   color: #0A1628;
 }
-body.dark-mode .hero-wrapper .btn--primary:hover {
+html.dark-mode .hero-wrapper .btn--primary:hover {
   background: #BAD9FF;
   border-color: #BAD9FF;
   color: #0A1628;
 }
-body.dark-mode .hero-wrapper .btn--ghost {
+html.dark-mode .hero-wrapper .btn--ghost {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.5);
 }
@@ -1662,6 +1662,47 @@ body.dark-mode .hero-wrapper .btn--ghost {
 .social-link--pdf:hover { opacity: 0.75; color: var(--accent); }
 
 /* --------------------------------------------------------------------------
+   14b. PROJECT PAGER — sticky top prev/next strip
+   -------------------------------------------------------------------------- */
+.proj-pager {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad);
+  height: 36px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.proj-pager__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t3);
+  text-decoration: none;
+  transition: color var(--dur) ease;
+}
+.proj-pager__link:hover { color: var(--primary); }
+
+.proj-pager__all {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t3);
+  text-decoration: none;
+  transition: color var(--dur) ease;
+}
+.proj-pager__all:hover { color: var(--t1); }
+
+/* --------------------------------------------------------------------------
    15. FOOTER
    -------------------------------------------------------------------------- */
 .footer {
@@ -1755,7 +1796,7 @@ body.dark-mode .hero-wrapper .btn--ghost {
   font-feature-settings: 'tnum';
   min-width: 48px;
 }
-body.dark-mode .pexp-mini-item {
+html.dark-mode .pexp-mini-item {
   color: rgba(255, 255, 255, 0.85);
 }
 

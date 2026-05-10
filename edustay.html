@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
   <title>Edustay — Jang Hoon Min</title>
   <meta name="description" content="Edustay — 교육과 숙박을 연결하는 서비스 플랫폼 UX/UI 케이스 스터디" />
   <link rel="stylesheet" href="style.css" />
@@ -36,14 +37,14 @@
       --es-blk:  40px;
       --es-el:   16px;
     }
-    body.dark-mode {
+    html.dark-mode {
       --es-t1:  #FFFFFF;
       --es-t2:  #D6E8F5;
       --es-t3:  rgba(255, 255, 255, 0.6);
       --es-bdr: rgba(255, 255, 255, 0.1);
       --es-off: #0C1527;
     }
-    body.dark-mode .es-imgblk__bar { background: var(--es-off); }
+    html.dark-mode .es-imgblk__bar { background: var(--es-off); }
 
     .es { max-width: 1280px; margin: 0 auto; padding-left: var(--es-pad); padding-right: var(--es-pad); }
 
@@ -90,9 +91,9 @@
     .es-hero__title {
       font-size: clamp(56px, 8vw, 96px);
       font-weight: 800; letter-spacing: -0.045em; line-height: 0.92;
-      color: var(--es-t1); margin-bottom: 28px;
+      color: var(--primary); margin-bottom: 28px;
     }
-    .es-hero__title span { color: var(--es); }
+    .es-hero__title span { color: inherit; }
     .es-hero__sub { font-size: 18px; font-weight: 400; line-height: 1.7; color: var(--es-t2); max-width: 560px; }
     .es-hero__award {
       display: inline-flex; align-items: center; gap: 10px;
@@ -263,6 +264,12 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="proj-pager">
+    <a href="neulpureun.html" class="proj-pager__link">← Neulpureun</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="ihwa.html" class="proj-pager__link">Ihwa →</a>
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
@@ -673,3 +680,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
