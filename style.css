@@ -389,6 +389,11 @@ html.dark-mode .hero-wrapper::before {
     transparent 90%
   );
 }
+html.dark-mode .hero__structure {
+  opacity: 1;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.44) 35%, rgba(0,0,0,0.12) 65%, rgba(0,0,0,0.07) 100%);
+  mask-image:         linear-gradient(to right, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.44) 35%, rgba(0,0,0,0.12) 65%, rgba(0,0,0,0.07) 100%);
+}
 .hero {
   min-height: 100svh;
   display: flex;
@@ -853,6 +858,9 @@ html.dark-mode .hero-wrapper .btn--ghost {
   object-fit: cover;
   display: block;
 }
+.about__photo--dark { display: none; }
+html.dark-mode .about__photo--light { display: none; }
+html.dark-mode .about__photo--dark  { display: block; }
 
 .about__photo-note {
   font-size: 0.62rem;
