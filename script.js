@@ -67,6 +67,7 @@ window.scrollTo(0, 0);
   }
 
   btn.addEventListener('click', () => {
+    document.documentElement.classList.add('theme-transitioning');
     const isDark = document.documentElement.classList.contains('dark-mode');
     if (isDark) {
       document.documentElement.classList.remove('dark-mode');
@@ -77,6 +78,7 @@ window.scrollTo(0, 0);
       icon.textContent = '☀';
       localStorage.setItem('portfolio-theme-v2', 'dark');
     }
+    setTimeout(() => document.documentElement.classList.remove('theme-transitioning'), 500);
   });
 }());
 

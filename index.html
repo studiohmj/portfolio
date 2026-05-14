@@ -63,7 +63,7 @@
       </h1>
     </div>
 
-    <div class="hero__bottom line">
+    <div class="hero__bottom">
       <div class="hero__identity">
         <p class="hero__name-kr">장훈민</p>
         <p class="hero__name-sub">Jang Hoon Min</p>
@@ -130,7 +130,7 @@
         </button>
       </div>
 
-      <div class="section-toggle__body" id="aboutContent">
+      <div class="section-toggle__body" id="aboutContent" style="display:none">
       <div class="about__main">
 
         <div class="about__photo-col fade-in">
@@ -717,8 +717,8 @@
           } else {
             content.style.maxHeight = content.scrollHeight + 'px';
             content.style.opacity   = '1';
-            content.addEventListener('transitionend', () => {
-              if (btn.getAttribute('aria-expanded') === 'true') content.style.maxHeight = 'none';
+            content.addEventListener('transitionend', (e) => {
+              if (e.propertyName === 'max-height' && btn.getAttribute('aria-expanded') === 'true') content.style.maxHeight = 'none';
             }, { once: true });
             btn.setAttribute('aria-expanded', 'true');
             if (label) label.textContent = 'Hide';

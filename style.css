@@ -41,6 +41,7 @@
   --ease:      cubic-bezier(0.4, 0, 0.2, 1);
   --dur:       0.32s;
   --dur-slow:  0.55s;
+  --dur-theme: 0.42s;
 
   --nav-h:  64px;
   --max:    1280px;
@@ -349,6 +350,7 @@ html.dark-mode .nav:not(.scrolled) .theme-toggle {
   --border:     rgba(15, 23, 42, 0.1);
   --border-mid: rgba(15, 23, 42, 0.15);
   color: #0F172A;
+  transition: background-color var(--dur-theme) ease;
 }
 
 /* 라이트: 왼쪽 흰빛 그라디언트로 텍스트 가독성 확보 */
@@ -367,10 +369,29 @@ html.dark-mode .nav:not(.scrolled) .theme-toggle {
   );
 }
 
+/* 다크모드 이미지 + 그라디언트 — opacity로 crossfade */
+.hero-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      rgba(4, 10, 24, 0.78) 0%,
+      rgba(4, 10, 24, 0.42) 45%,
+      rgba(4, 10, 24, 0.1) 70%,
+      transparent 90%
+    ),
+    url('다크모드.png') right top / cover;
+  opacity: 0;
+}
+html.dark-mode .hero-wrapper::after { opacity: 1; }
+
 /* ── 다크모드 override ──────────────────────────────── */
 html.dark-mode .hero-wrapper {
   background-color: #060D18;
-  background-image: url('다크모드.png');
   --t1:         #EFF6FF;
   --t2:         #93B4D8;
   --t3:         rgba(255, 255, 255, 0.52);
@@ -379,15 +400,6 @@ html.dark-mode .hero-wrapper {
   --border:     rgba(255, 255, 255, 0.08);
   --border-mid: rgba(255, 255, 255, 0.18);
   color: #EFF6FF;
-}
-html.dark-mode .hero-wrapper::before {
-  background: linear-gradient(
-    to right,
-    rgba(4, 10, 24, 0.78) 0%,
-    rgba(4, 10, 24, 0.42) 45%,
-    rgba(4, 10, 24, 0.1) 70%,
-    transparent 90%
-  );
 }
 html.dark-mode .hero__structure {
   opacity: 1;
@@ -2138,4 +2150,17 @@ html.dark-mode .pexp-mini-item {
   .drawer-hero__name { font-size: 1rem; }
   .drawer-timeline__item { grid-template-columns: 70px 1fr; gap: 0.5rem; }
   .drawer-timeline__date { font-size: 0.58rem; }
+}
+
+/* --------------------------------------------------------------------------
+   20. THEME TRANSITION — smooth crossfade on toggle
+   -------------------------------------------------------------------------- */
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color var(--dur-theme) ease,
+    color            var(--dur-theme) ease,
+    border-color     var(--dur-theme) ease,
+    opacity          var(--dur-theme) ease;
 }
