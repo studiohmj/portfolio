@@ -19,7 +19,7 @@
     body {
       font-family: 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    em { font-family: inherit; font-style: normal; }
+    em { font-family: inherit; font-style: normal; color: inherit; }
 
     :root {
       --es:      #6C47D4;
@@ -32,7 +32,7 @@
       --es-t2:   #444444;
       --es-t3:   #999999;
       --es-bdr:  #D4C8F0;
-      --es-pad:  80px;
+      --es-pad:  var(--pad);
       --es-sec:  80px;
       --es-blk:  40px;
       --es-el:   16px;
@@ -102,13 +102,21 @@
       font-size: 13px; font-weight: 600; color: var(--es-dk);
     }
     .es-meta {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--es-bdr); margin-top: var(--es-blk);
+      display: flex;
+      gap: 0;
+      border-top: 1px solid var(--es-bdr);
+      margin-top: var(--es-blk);
     }
-    .es-meta__item { padding: 20px 0; }
-    .es-meta__item + .es-meta__item { padding-left: 24px; border-left: 1px solid var(--es-bdr); }
-    .es-meta__dt { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--es-t3); margin-bottom: 8px; }
-    .es-meta__dd { font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--es-t1); }
+    .es-meta__item {
+      padding: 1.25rem 2.5rem 1.25rem 0;
+      margin-right: 2.5rem;
+      border-right: 1px solid var(--es-bdr);
+      border-top: 3px solid transparent;
+    }
+    .es-meta__item:first-child { border-top-color: var(--es); }
+    .es-meta__item:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .es-meta__dt { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--es-t3); margin: 0 0 6px; }
+    .es-meta__dd { font-size: 14px; font-weight: 600; line-height: 1; color: var(--es-t1); margin: 0; }
 
     /* IMAGES */
     .es-cover { width: 100%; line-height: 0; }
@@ -212,18 +220,15 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      :root { --es-pad: 48px; }
       .es-features { grid-template-columns: 1fr 1fr; }
       .es-color-notes { grid-template-columns: 1fr; }
       .es-outcomes { grid-template-columns: 1fr 1fr; }
       .es-screens { flex-wrap: wrap; }
     }
     @media (max-width: 768px) {
-      :root { --es-pad: 24px; --es-sec: 56px; --es-blk: 32px; }
+      :root { --es-sec: 56px; --es-blk: 32px; }
       .es-hero { padding-top: calc(var(--nav-h, 64px) + 2.5rem); }
       .es-hero__title { font-size: clamp(44px, 14vw, 72px); }
-      .es-meta { grid-template-columns: 1fr 1fr; }
-      .es-meta__item:nth-child(3) { border-left: none; padding-left: 0; }
       .es-features { grid-template-columns: 1fr; }
       .es-outcomes { grid-template-columns: 1fr; }
       .es-credits { grid-template-columns: 1fr 1fr; }
@@ -284,7 +289,7 @@
   <!-- HERO -->
   <header class="es-hero">
     <div class="es">
-      <a href="index.html#work" class="es-back">← All Work</a>
+      <a href="neulpureun.html" class="es-back">← Neulpureun</a>
 
       <div class="es-hero__eyebrow">
         <span class="es-hero__eyebrow-rule"></span>

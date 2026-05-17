@@ -1688,13 +1688,16 @@ html.dark-mode .about__photo--dark  { display: block; }
   position: sticky;
   top: var(--nav-h);
   z-index: 500;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 0 var(--pad);
   height: 36px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+}
+.proj-pager__link:last-child {
+  justify-self: end;
 }
 
 .proj-pager__link {

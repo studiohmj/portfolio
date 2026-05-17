@@ -19,7 +19,7 @@
     body {
       font-family: 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    em { font-family: inherit; font-style: normal; }
+    em { font-family: inherit; font-style: normal; color: inherit; }
 
     :root {
       --yh:      #FFF100;
@@ -47,6 +47,7 @@
       --yh-bdr: rgba(255, 255, 255, 0.1);
       --yh-off: #0C1527;
     }
+    html.dark-mode .yh-sec { background: var(--yh-off); }
     html.dark-mode .yh-imgblk__bar { background: var(--yh-off); }
     html.dark-mode .yh-out__h { color: var(--yh-t1); }
     html.dark-mode .yh-out__bar { background: rgba(255,255,255,0.25); }
@@ -849,9 +850,9 @@
             설명 없이 전달해야 한다.
           </p>
           <p class="yh-body mt-el">
-            세 모티브 — 눈, 집, 씨앗 — 은 각각 독립된 기호가 아니다.
+            세 모티브 — 집, 창문, 붓 — 은 각각 독립된 기호가 아니다.
             이것들이 하나로 합쳐질 때 Yellow House의 정체성이 완성된다.
-            시선으로 작품을 받아들이고(눈), 공간이 예술가를 품으며(집), 다음 작업으로 나아간다(씨앗).
+            공간이 예술가를 품으며(집), 시선으로 작품을 받아들이고(창문), 다음 작업으로 나아간다(붓).
             <strong>공간이 할 수 있는 일의 전부가 이 세 단어 안에 있다.</strong>
           </p>
         </div>
@@ -859,18 +860,6 @@
       </div>
 
       <div class="yh-motifs mt-blk fade-in">
-
-        <div class="yh-motif">
-          <div class="yh-motif__icon">◉</div>
-          <div class="yh-motif__name">눈</div>
-          <div class="yh-motif__val">Sense / 감각</div>
-          <p class="yh-motif__body">
-            예술을 처음 마주치는 순간, 보는 방식이 달라진다.
-            사전 지식 없이도, 선입견 없이도
-            작품이 먼저 시선 안으로 들어온다.
-            그 첫 시선이 전부다.
-          </p>
-        </div>
 
         <div class="yh-motif">
           <div class="yh-motif__icon">⌂</div>
@@ -885,9 +874,21 @@
         </div>
 
         <div class="yh-motif">
-          <div class="yh-motif__icon">❧</div>
-          <div class="yh-motif__name">씨앗</div>
-          <div class="yh-motif__val">Growth / 성장</div>
+          <div class="yh-motif__icon">▢</div>
+          <div class="yh-motif__name">창문</div>
+          <div class="yh-motif__val">View / 시선</div>
+          <p class="yh-motif__body">
+            예술을 처음 마주치는 순간, 보는 방식이 달라진다.
+            사전 지식 없이도, 선입견 없이도
+            작품이 먼저 시선 안으로 들어온다.
+            그 첫 시선이 전부다.
+          </p>
+        </div>
+
+        <div class="yh-motif">
+          <div class="yh-motif__icon">✒</div>
+          <div class="yh-motif__name">붓</div>
+          <div class="yh-motif__val">Creation / 창작</div>
           <p class="yh-motif__body">
             첫 전시는 끝이 아니라 시작점이다.
             Yellow House에서의 경험이

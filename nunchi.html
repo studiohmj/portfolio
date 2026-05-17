@@ -11,6 +11,28 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
+    :root {
+      --primary:      #FF5500;
+      --primary-soft: #FF7733;
+      --accent:       #FF5500;
+      --accent-dim:   rgba(255, 85, 0, 0.08);
+      --accent-mid:   rgba(255, 85, 0, 0.16);
+      --accent-light: #FFF2EE;
+    }
+    html.dark-mode {
+      --primary:      #FF7733;
+      --primary-soft: #FF9966;
+      --accent:       #FF7733;
+      --accent-light: #2A1000;
+    }
+    .proj-hero__title { color: #FF5500; }
+    .proj-hero__back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--t3); text-decoration: none; margin-bottom: 48px; transition: color 0.2s;
+    }
+    .proj-hero__back::after { display: none; }
+    .proj-hero__back:hover { color: var(--t1); }
     body {
       font-family: 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
     }
@@ -160,6 +182,24 @@
       .nunchi-cats { grid-template-columns: 1fr; }
       .nunchi-stats { grid-template-columns: 1fr 1fr; }
     }
+    .nunchi-meta {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+    .nunchi-meta > div {
+      padding: 1.25rem 2.5rem 1.25rem 0;
+      margin-right: 2.5rem;
+      border-right: 1px solid var(--border);
+      border-top: 3px solid transparent;
+    }
+    .nunchi-meta > div:first-child { border-top-color: var(--primary); }
+    .nunchi-meta > div:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .nunchi-meta dt {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--t3); margin-bottom: 6px;
+    }
+    .nunchi-meta dd { font-size: 14px; font-weight: 600; color: var(--t1); letter-spacing: -0.01em; }
     .nunchi-live-btn {
       display: inline-block;
       margin-top: 1.5rem;
@@ -179,7 +219,7 @@
     .nunchi-inter-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
+      gap: 1.5rem;
       margin-top: 3rem;
     }
     .nunchi-inter__item {
@@ -246,7 +286,7 @@
   <header class="proj-hero">
     <div class="container">
       <div class="proj-hero__inner">
-        <a href="index.html#work" class="proj-hero__back">← All Work</a>
+        <a href="ihwa.html" class="proj-hero__back">← Ihwa</a>
         <div class="proj-hero__meta fade-in">
           <span class="proj-hero__cat">App / Web Design</span>
           <span class="proj-hero__sep">·</span>
@@ -254,23 +294,14 @@
         </div>
         <h1 class="proj-hero__title fade-in">눈치코치</h1>
         <p class="proj-hero__tagline fade-in">눈치 있게, 코치 받자 — 사회적 상황을 데이터로 익히는 시뮬레이션 앱 &amp; 웹 서비스</p>
-        <dl class="proj-hero__info fade-in">
-          <div class="proj-hero__info-item"><dt>Role</dt><dd>UX/UI Designer</dd></div>
-          <div class="proj-hero__info-item"><dt>Type</dt><dd>Academic Project</dd></div>
-          <div class="proj-hero__info-item"><dt>Year</dt><dd>2026</dd></div>
-          <div class="proj-hero__info-item" style="border-right: none; margin-right: 0; padding-right: 0;"><dt>Scope</dt><dd>App · Web · Brand Identity</dd></div>
-          <div class="proj-hero__info-item" style="border-top: 1px solid var(--border);">
-            <dt>Web</dt>
-            <dd><a href="https://studiohmj.github.io/noonchiweb/" target="_blank" rel="noopener" class="proj-hero__live-link">Visit Site ↗</a></dd>
-          </div>
-          <div class="proj-hero__info-item" style="border-top: 1px solid var(--border);">
-            <dt>App</dt>
-            <dd><a href="https://studiohmj.github.io/coachapp/" target="_blank" rel="noopener" class="proj-hero__live-link">Visit App ↗</a></dd>
-          </div>
-          <div class="proj-hero__info-item" style="border-top: 1px solid var(--border);">
-            <dt>Interaction</dt>
-            <dd><a href="https://studiohmj.github.io/nonchiinter/" target="_blank" rel="noopener" class="proj-hero__live-link">Visit ↗</a></dd>
-          </div>
+        <dl class="nunchi-meta fade-in">
+          <div><dt>Role</dt><dd>UX/UI Designer</dd></div>
+          <div><dt>Type</dt><dd>Academic Project</dd></div>
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Scope</dt><dd>App · Web · Brand Identity</dd></div>
+          <div><dt>Web</dt><dd><a href="https://studiohmj.github.io/noonchiweb/" target="_blank" rel="noopener" class="proj-hero__live-link">Visit Site ↗</a></dd></div>
+          <div><dt>App</dt><dd><a href="https://studiohmj.github.io/coachapp/" target="_blank" rel="noopener" class="proj-hero__live-link">Visit App ↗</a></dd></div>
+          <div><dt>Interaction</dt><dd><a href="https://studiohmj.github.io/nonchiinter/" target="_blank" rel="noopener" class="proj-hero__live-link">Visit ↗</a></dd></div>
         </dl>
       </div>
     </div>

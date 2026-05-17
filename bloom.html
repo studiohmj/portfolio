@@ -13,7 +13,7 @@
     body {
       font-family: 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    em { font-family: inherit; font-style: normal; }
+    em { font-family: inherit; font-style: normal; color: inherit; }
 
     :root {
       --bl: #FF4FA3;
@@ -47,9 +47,18 @@
       line-height: 1.6; margin: 28px 0 48px; max-width: 600px;
     }
     .bl-hero__dl {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 24px 32px;
-      padding-top: 40px; border-top: 1px solid var(--border);
+      display: flex;
+      gap: 0;
+      border-top: 1px solid var(--border);
     }
+    .bl-hero__dl > div {
+      padding: 1.25rem 2.5rem 1.25rem 0;
+      margin-right: 2.5rem;
+      border-right: 1px solid var(--border);
+      border-top: 3px solid transparent;
+    }
+    .bl-hero__dl > div:first-child { border-top-color: var(--bl); }
+    .bl-hero__dl > div:last-child { border-right: none; margin-right: 0; padding-right: 0; }
     .bl-hero__dl dt {
       font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
       color: var(--t3); margin-bottom: 6px;
@@ -308,7 +317,7 @@
   <section class="bl-hero">
     <div class="container">
       <div class="bl-hero__inner">
-        <a href="index.html#work" class="bl-hero__back">← All Work</a>
+        <a href="nunchi.html" class="bl-hero__back">← 눈치코치</a>
         <div class="bl-hero__kicker fade-in">
           <span class="bl-hero__cat">Hand Interaction</span>
           <span class="bl-hero__year">2026</span>
