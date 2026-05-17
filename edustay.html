@@ -22,16 +22,16 @@
     em { font-family: inherit; font-style: normal; }
 
     :root {
-      --es:      #3A6B9C;
-      --es-lt:   #E8F0F8;
-      --es-dk:   #1E4B7A;
-      --es-05:   rgba(58, 107, 156, 0.07);
-      --es-10:   rgba(58, 107, 156, 0.13);
-      --es-off:  #F7FAFE;
+      --es:      #6C47D4;
+      --es-lt:   #EDE8FD;
+      --es-dk:   #4A2FA8;
+      --es-05:   rgba(108, 71, 212, 0.07);
+      --es-10:   rgba(108, 71, 212, 0.13);
+      --es-off:  #F8F6FE;
       --es-t1:   #111111;
       --es-t2:   #444444;
       --es-t3:   #999999;
-      --es-bdr:  #CDD9E8;
+      --es-bdr:  #D4C8F0;
       --es-pad:  80px;
       --es-sec:  80px;
       --es-blk:  40px;
@@ -39,10 +39,10 @@
     }
     html.dark-mode {
       --es-t1:  #FFFFFF;
-      --es-t2:  #D6E8F5;
+      --es-t2:  #E0D4F8;
       --es-t3:  rgba(255, 255, 255, 0.6);
       --es-bdr: rgba(255, 255, 255, 0.1);
-      --es-off: #0C1527;
+      --es-off: #110A24;
     }
     html.dark-mode .es-imgblk__bar { background: var(--es-off); }
 
@@ -91,7 +91,7 @@
     .es-hero__title {
       font-size: clamp(56px, 8vw, 96px);
       font-weight: 800; letter-spacing: -0.045em; line-height: 0.92;
-      color: var(--primary); margin-bottom: 28px;
+      color: var(--es); margin-bottom: 28px;
     }
     .es-hero__title span { color: inherit; }
     .es-hero__sub { font-size: 18px; font-weight: 400; line-height: 1.7; color: var(--es-t2); max-width: 560px; }
@@ -340,16 +340,14 @@
       </p>
 
       <p class="es-body mt-blk">
-        어학 연수, 홈스테이 교육 여행을 떠나는 학습자가 늘고 있다.
-        그러나 언어 장벽, 정체불명의 호스트, 산발적인 학습 관리 —
-        <strong>출발 전의 설렘이 도착 후의 불안으로 바뀌는 경험</strong>이 반복됐다.
-        Edustay는 그 세 가지 공백을 한 플랫폼 안에서 해소하고자 했다.
+        홈스테이 학습자들이 공통적으로 겪는 공백이 세 가지 있다.
+        언어 장벽, 호스트 신뢰 정보 부재, 학습 연속성 단절.
+        Edustay는 이 세 지점을 하나의 플랫폼으로 연결한다.
       </p>
 
       <div class="es-insight">
         <p class="es-insight__txt">
-          배움은 강의실 안에서만 일어나지 않는다.<br />
-          <em>머무는 공간과 사람</em>이 그 자체로 교육 환경이 된다.
+          <em>머무는 공간과 사람</em>이 교육 환경이 된다.
         </p>
       </div>
 
@@ -372,7 +370,7 @@
             <p class="es-ob__body">
               별점과 후기만으로는 부족하다. 호스트의 직업, 가족 구성, 생활 방식 —
               낯선 집에 머물기 위해 필요한 구체적인 신뢰 정보가
-              기존 플랫폼에는 없었다. 신원 인증도 형식적 수준에 그쳤다.
+              기존 플랫폼에는 없었다. 신원 인증도 형식에 불과했다.
             </p>
           </div>
         </div>
@@ -381,9 +379,8 @@
           <div>
             <p class="es-ob__title">학습 단절 — 떠나 있는 동안 공부가 흩어진다</p>
             <p class="es-ob__body">
-              홈스테이 중에도 학습은 계속되어야 한다.
-              하지만 일정 관리, 진도 추적, 학습 목표 유지를 위한 도구가 없어
-              여행이 끝나면 배움도 함께 끊기는 경험이 반복됐다.
+              일정 관리, 진도 추적, 학습 목표 유지를 위한 도구가 없었다.
+              홈스테이 기간 동안 학습이 단절되는 구조적 문제였다.
             </p>
           </div>
         </div>
@@ -429,8 +426,7 @@
 
       <p class="es-body mt-blk">
         예약 앱이 아니라 학습 여정 전체를 설계했다.
-        AI 코치가 일정을 잡고, AI 번역이 대화를 잇고, 신원 인증이 믿음을 만든다.
-        세 개의 UX 축이 그 흐름을 완성한다.
+        AI 코치, AI 번역, 신원 인증 — 세 기능이 하나의 여정 구조를 구성한다.
       </p>
 
       <div class="es-features">
@@ -439,9 +435,8 @@
           <p class="es-feature__name">AI 학습 코치 · EduChat</p>
           <p class="es-feature__kw">AI Coach · Learning Plan</p>
           <p class="es-feature__desc">
-            홈 화면에서 AI 학습 코치가 맞춤형 학습 플랜을 제안한다.
-            일정 관리, 진도 추적, 포트폴리오, 활동 로그까지 —
-            홈스테이 기간 동안 배움이 끊기지 않도록 설계됐다.
+            홈 화면에서 AI 학습 코치가 맞춤형 플랜을 제안한다.
+            일정 관리, 진도 추적, 포트폴리오, 활동 로그를 하나의 인터페이스로 통합한다.
           </p>
         </div>
         <div class="es-feature">
@@ -537,40 +532,40 @@
       </p>
 
       <p class="es-body mt-blk">
-        지식의 무게가 있지만 딱딱하지 않다. 학문의 신뢰와 여행의 가능성을 함께 가지는 온도. Academic Blue가 Edustay에 맞는 이유다.
+        지식의 무게가 있지만 딱딱하지 않다. 학문의 신뢰와 여행의 가능성을 함께 가지는 온도. 보라가 Edustay의 그 온도에 맞는 이유다.
       </p>
 
       <div class="es-swatches">
-        <div class="es-sw" style="background:#3A6B9C;">
-          <span class="es-sw__label" style="color:rgba(255,255,255,0.9);">#3A6B9C — Academic Blue</span>
+        <div class="es-sw" style="background:#6C47D4;">
+          <span class="es-sw__label" style="color:rgba(255,255,255,0.9);">#6C47D4 — Edu Purple</span>
         </div>
-        <div class="es-sw" style="background:#E8F0F8; border:1px solid rgba(0,0,0,0.06);">
-          <span class="es-sw__label" style="color:#3A6B9C;">#E8F0F8 — Light Blue</span>
+        <div class="es-sw" style="background:#EDE8FD; border:1px solid rgba(0,0,0,0.06);">
+          <span class="es-sw__label" style="color:#6C47D4;">#EDE8FD — Light Lavender</span>
         </div>
-        <div class="es-sw" style="background:#1E4B7A;">
-          <span class="es-sw__label" style="color:rgba(255,255,255,0.9);">#1E4B7A — Deep Blue</span>
+        <div class="es-sw" style="background:#4A2FA8;">
+          <span class="es-sw__label" style="color:rgba(255,255,255,0.9);">#4A2FA8 — Deep Purple</span>
         </div>
         <div class="es-sw" style="background:#111111;">
           <span class="es-sw__label" style="color:rgba(255,255,255,0.7);">#111111 — Dark</span>
         </div>
-        <div class="es-sw" style="background:#F7FAFE; border:1px solid rgba(0,0,0,0.06);">
-          <span class="es-sw__label" style="color:#999;">#F7FAFE — Off White</span>
+        <div class="es-sw" style="background:#F8F6FE; border:1px solid rgba(0,0,0,0.06);">
+          <span class="es-sw__label" style="color:#999;">#F8F6FE — Off White</span>
         </div>
       </div>
 
       <div class="es-color-notes">
         <div class="es-cn">
-          <div class="es-cn__dot" style="background:#3A6B9C;"></div>
-          <p class="es-cn__name">Academic Blue #3A6B9C</p>
+          <div class="es-cn__dot" style="background:#6C47D4;"></div>
+          <p class="es-cn__name">Edu Purple #6C47D4</p>
           <p class="es-cn__why">
-            지식의 무게와 여행의 설렘 사이. 딱딱하지도, 가볍지도 않은 온도가 Edustay에 맞다.
+            지식의 무게와 여행의 설렘 사이. 딱딱하지도, 가볍지도 않은 온도 — Edu Purple이 그 지점이다.
           </p>
         </div>
         <div class="es-cn">
-          <div class="es-cn__dot" style="background:#1E4B7A;"></div>
-          <p class="es-cn__name">Deep Blue #1E4B7A</p>
+          <div class="es-cn__dot" style="background:#4A2FA8;"></div>
+          <p class="es-cn__name">Deep Purple #4A2FA8</p>
           <p class="es-cn__why">
-            CTA·헤더·강조에 사용. Primary Blue와 조합해 자연스러운 명도 계층을 만든다.
+            CTA·헤더·강조에 사용. Primary Purple과 조합해 명도 계층을 구성한다.
           </p>
         </div>
       </div>
@@ -596,7 +591,7 @@
         <div class="es-outcome">
           <span class="es-outcome__icon">🤖</span>
           <p class="es-outcome__title">AI 학습 코치 · EduChat</p>
-          <p class="es-outcome__desc">홈 화면에서 AI 코치가 학습 플랜·진도·포트폴리오를 관리. 배움이 여행 중에도 이어진다.</p>
+          <p class="es-outcome__desc">홈 화면에서 AI 코치가 학습 플랜·진도·포트폴리오를 관리. 홈스테이 기간 동안 학습을 연속적으로 관리한다.</p>
         </div>
         <div class="es-outcome">
           <span class="es-outcome__icon">💬</span>
@@ -616,7 +611,7 @@
         <div class="es-outcome">
           <span class="es-outcome__icon">📅</span>
           <p class="es-outcome__title">학습 플랜 · 활동 로그</p>
-          <p class="es-outcome__desc">일정, 미션, 진도율을 한눈에 추적. 홈스테이 기간 동안 학습 흐름이 끊기지 않는다.</p>
+          <p class="es-outcome__desc">일정, 미션, 진도율을 한눈에 추적. 홈스테이 기간 학습 관리를 하나의 화면으로 처리한다.</p>
         </div>
         <div class="es-outcome">
           <span class="es-outcome__icon">🏆</span>
@@ -637,8 +632,8 @@
       </p>
       <p class="es-reflection__note">
         프로젝트를 시작할 때 가장 먼저 한 질문은 "사람들은 왜 배우러 떠나는가"였다.
-        장소가 달라지면 배움의 질도 달라진다는 것.
-        Edustay는 그 직관에서 출발했고, 수상으로 그 방향을 검증받았다.
+        장소가 달라지면 배움의 밀도가 달라진다는 것.
+        GCD4FE 수상이 그 방향을 확인해줬다.
       </p>
     </div>
   </div>
