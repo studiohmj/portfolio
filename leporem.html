@@ -295,14 +295,22 @@
       .lp-main  { grid-column: 1 / 13; }
       .lp-half  { grid-column: 1 / 13; }
       .lp-meta  { grid-template-columns: 1fr 1fr; }
+      .lp-meta__item:nth-child(2n+1) { border-left: none; padding-left: 0; }
       .lp-features { grid-template-columns: 1fr; }
       .lp-outcomes { grid-template-columns: 1fr; }
+      .lp-credits  { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
       .lp { padding: 0 20px; }
       .lp-imgblock__bar { padding: .6rem 20px; }
       .lp-h1 { font-size: clamp(3rem, 14vw, 5rem); }
       .lp-back { margin-bottom: 2rem; }
+      .lp-meta  { grid-template-columns: 1fr; }
+      .lp-meta__item + .lp-meta__item { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: .75rem; }
+      .lp-credits { grid-template-columns: 1fr; }
+      .lp-credits__row + .lp-credits__row { border-left: none; padding-left: 0; border-top: 1px solid var(--border); }
+      .lp-next { flex-direction: column; gap: 2rem; }
+      .lp-next > div:last-child { text-align: left; }
     }
   </style>
 </head>
