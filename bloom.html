@@ -273,8 +273,6 @@
       .bl-swatches { flex-wrap: wrap; }
       .bl-swatch { flex: 0 0 calc(50% - 1px); }
       .bl-gestures { grid-template-columns: 1fr; }
-      .bl-next { flex-direction: column; gap: 2rem; }
-      .bl-next > div:last-child { text-align: left; }
     }
     .footer__back-link {
       font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
@@ -292,7 +290,7 @@
       <li><a href="index.html#about">About</a></li>
       <li><a href="profile.html">Profile</a></li>
       <li><a href="index.html#work">Work</a></li>
-      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#awards">Awards &amp; Projects</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
@@ -310,7 +308,7 @@
       <li><a href="index.html#about" class="mobile-link">About</a></li>
       <li><a href="profile.html" class="mobile-link">Profile</a></li>
       <li><a href="index.html#work" class="mobile-link">Work</a></li>
-      <li><a href="index.html#awards" class="mobile-link">Awards</a></li>
+      <li><a href="index.html#awards" class="mobile-link">Awards &amp; Projects</a></li>
       <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
     </ul>
   </div>
@@ -354,12 +352,12 @@
           <div class="bl-split__title">아이디어</div>
         </div>
         <div>
-          <p class="bl-lead">손의 개폐가 꽃의 개화를 제어한다.</p>
-          <p class="bl-body">MediaPipe로 손을 실시간 추적하고, 21개 랜드마크 데이터를 파티클 시스템에 매핑했다. 웹캠 없는 환경을 위한 마우스·터치 대체 모드도 포함한다.</p>
+          <p class="bl-lead">손의 개폐가 꽃의 개화를 제어합니다.</p>
+          <p class="bl-body">MediaPipe로 손을 실시간 추적하고, 21개 랜드마크 데이터를 파티클 시스템에 매핑했습니다. 웹캠 없는 환경을 위한 마우스·터치 대체 모드도 포함합니다.</p>
 
           <div class="bl-insight fade-in">
             <div class="bl-insight__label">Concept</div>
-            <p class="bl-insight__text">"손 모양이 꽃의 상태를 결정한다."</p>
+            <p class="bl-insight__text">손 모양이 꽃의 상태를 결정합니다.</p>
           </div>
         </div>
       </div>
@@ -377,44 +375,44 @@
         </div>
         <div>
           <p class="bl-lead">6가지 제스처 인터랙션</p>
-          <p class="bl-body">일상적인 손 동작을 인터랙션 입력으로 사용했다.</p>
+          <p class="bl-body">일상적인 손 동작을 인터랙션 입력으로 사용했습니다.</p>
 
           <div class="bl-gestures fade-in">
             <div class="bl-gesture">
               <span class="bl-gesture__sym">✋</span>
               <p class="bl-gesture__name">Open Hand</p>
               <span class="bl-gesture__tag bl-gesture__tag--pink">BLOOM</span>
-              <p class="bl-gesture__desc">손 펼침 각도에 비례해 꽃이 개화한다.</p>
+              <p class="bl-gesture__desc">손 펼침 각도에 비례해 꽃이 개화합니다.</p>
             </div>
             <div class="bl-gesture">
               <span class="bl-gesture__sym">✊</span>
               <p class="bl-gesture__name">Closed Fist</p>
               <span class="bl-gesture__tag bl-gesture__tag--dim">WITHER</span>
-              <p class="bl-gesture__desc">주먹을 쥐면 꽃이 닫힌다.</p>
+              <p class="bl-gesture__desc">주먹을 쥐면 꽃이 닫힙니다.</p>
             </div>
             <div class="bl-gesture">
               <span class="bl-gesture__sym">✌</span>
               <p class="bl-gesture__name">Peace Sign</p>
               <span class="bl-gesture__tag bl-gesture__tag--pink">PETAL STORM</span>
-              <p class="bl-gesture__desc">꽃잎 파티클이 화면 전체로 퍼진다.</p>
+              <p class="bl-gesture__desc">꽃잎 파티클이 화면 전체로 퍼집니다.</p>
             </div>
             <div class="bl-gesture">
               <span class="bl-gesture__sym">☝</span>
               <p class="bl-gesture__name">Pointing</p>
               <span class="bl-gesture__tag bl-gesture__tag--gold">SPOTLIGHT + MOVE</span>
-              <p class="bl-gesture__desc">검지 방향으로 꽃이 이동한다.</p>
+              <p class="bl-gesture__desc">검지 방향으로 꽃이 이동합니다.</p>
             </div>
             <div class="bl-gesture">
               <span class="bl-gesture__sym">🤘</span>
               <p class="bl-gesture__name">Rock Sign</p>
               <span class="bl-gesture__tag bl-gesture__tag--purple">COLOR SHIFT</span>
-              <p class="bl-gesture__desc">0.6초 유지 시 색상 테마 전환.</p>
+              <p class="bl-gesture__desc">0.6초 유지 시 색상 테마가 전환됩니다.</p>
             </div>
             <div class="bl-gesture">
               <span class="bl-gesture__sym">🖐</span>
               <p class="bl-gesture__name">Hand Position</p>
               <span class="bl-gesture__tag bl-gesture__tag--pink">PARALLAX</span>
-              <p class="bl-gesture__desc">손 위치에 따라 꽃의 중심이 이동한다.</p>
+              <p class="bl-gesture__desc">손 위치에 따라 꽃의 중심이 이동합니다.</p>
             </div>
           </div>
         </div>
@@ -438,22 +436,22 @@
             <div class="bl-decision">
               <span class="bl-decision__num">01</span>
               <p class="bl-decision__title">마우스·터치 대체 모드</p>
-              <p class="bl-decision__body">카메라 미허용 환경을 위한 대체 인터랙션. 스크롤로 개화 제어, 더블클릭으로 파티클 발산, 홀드로 시들기.</p>
+              <p class="bl-decision__body">카메라 미허용 환경을 위한 대체 인터랙션입니다. 스크롤로 개화 제어, 더블클릭으로 파티클 발산, 홀드로 시들기를 구현했습니다.</p>
             </div>
             <div class="bl-decision">
               <span class="bl-decision__num">02</span>
               <p class="bl-decision__title">8가지 오브젝트</p>
-              <p class="bl-decision__body">Peony, Lotus, Crystal, Dandelion, Rose, Jellyfish, Snowflake, Orbit. 오브젝트마다 파티클 구조와 움직임이 다르다.</p>
+              <p class="bl-decision__body">Peony, Lotus, Crystal, Dandelion, Rose, Jellyfish, Snowflake, Orbit. 오브젝트마다 파티클 구조와 움직임이 다릅니다.</p>
             </div>
             <div class="bl-decision">
               <span class="bl-decision__num">03</span>
               <p class="bl-decision__title">비디오 홈 화면</p>
-              <p class="bl-decision__body">인터랙션 진입 전 영상으로 경험의 성격을 먼저 보여준다. 카메라 권한 요청은 그 이후.</p>
+              <p class="bl-decision__body">인터랙션 진입 전 영상으로 경험의 성격을 먼저 보여줍니다. 카메라 권한 요청은 그 이후에 진행됩니다.</p>
             </div>
             <div class="bl-decision">
               <span class="bl-decision__num">04</span>
               <p class="bl-decision__title">다크 배경</p>
-              <p class="bl-decision__body">파티클의 발광감 극대화를 위해 다크 배경을 채택했다.</p>
+              <p class="bl-decision__body">파티클의 발광감 극대화를 위해 다크 배경을 채택했습니다.</p>
             </div>
           </div>
         </div>
@@ -466,7 +464,7 @@
     <div class="container">
       <span class="bl-section__label fade-in">04 — Visual System</span>
       <p class="bl-lead fade-in">Pink palette on black.</p>
-      <p class="bl-body fade-in">핑크·마젠타 계열을 기본 컬러로 사용했다. 록 사인 제스처 또는 Color 버튼으로 테마를 전환할 수 있다.</p>
+      <p class="bl-body fade-in">핑크·마젠타 계열을 기본 컬러로 사용했습니다. 록 사인 제스처 또는 Color 버튼으로 테마를 전환할 수 있습니다.</p>
 
       <div class="bl-swatches fade-in">
         <div class="bl-swatch" style="background:#060207;">
@@ -502,7 +500,7 @@
       </div>
 
       <span class="bl-section__label fade-in" style="margin-top:64px; margin-bottom:16px;">Selectable Objects</span>
-      <p class="bl-body fade-in">오브젝트마다 파티클 구조와 움직임 로직이 다르다. 같은 제스처 입력에도 선택된 오브젝트에 따라 전혀 다른 시각 출력이 나온다.</p>
+      <p class="bl-body fade-in">오브젝트마다 파티클 구조와 움직임 로직이 다릅니다. 같은 제스처 입력에도 선택된 오브젝트에 따라 전혀 다른 시각 출력이 나옵니다.</p>
       <div class="bl-objects fade-in">
         <div class="bl-object"><span class="bl-object__num">01</span><span class="bl-object__name">Peony</span></div>
         <div class="bl-object"><span class="bl-object__num">02</span><span class="bl-object__name">Lotus</span></div>
@@ -522,7 +520,7 @@
       <div class="bl-reflection__inner fade-in">
         <span class="bl-reflection__label">Reflection</span>
         <p class="bl-reflection__quote">"설명 없이도 작동하는 인터랙션."</p>
-        <p class="bl-reflection__body">진입 즉시 손 제스처가 꽃에 반응하는 것을 보여주는 것이 핵심이었다. 기능 확장보다 첫 반응의 즉각성과 명확성에 집중했다.</p>
+        <p class="bl-reflection__body">진입 즉시 손 제스처가 꽃에 반응하는 것을 보여주는 것이 핵심이었습니다. 기능 확장보다 첫 반응의 즉각성과 명확성에 집중했습니다.</p>
       </div>
     </div>
   </section>

@@ -188,7 +188,7 @@
     /* OUTCOMES */
     .es-outcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: var(--es-blk); }
     .es-outcome { background: var(--es-off); padding: 2rem 1.6rem; }
-    .es-outcome__icon { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
+    .es-outcome__icon { font-size: 1.3rem; font-weight: 600; color: var(--es); margin-bottom: 0.8rem; display: block; }
     .es-outcome__title { font-size: 0.95rem; font-weight: 700; color: var(--es-t1); margin-bottom: 0.4rem; }
     .es-outcome__desc  { font-size: 0.82rem; color: var(--es-t2); line-height: 1.7; }
 
@@ -240,13 +240,6 @@
       .es-insight__txt { font-size: 17px; }
       .es-screens { padding: 32px 24px; gap: 12px; }
       .es-screen { width: 160px; }
-      .es-meta { flex-wrap: wrap; }
-      .es-meta__item { flex: 0 0 50%; box-sizing: border-box; padding: 1rem 1rem 1rem 0; margin-right: 0; border-right: none; border-bottom: 1px solid var(--es-bdr); }
-      .es-meta__item:nth-child(odd) { border-right: 1px solid var(--es-bdr); }
-      .es-meta__item:nth-last-child(-n+2) { border-bottom: none; }
-      .es-meta__item:last-child { border-right: none; padding-right: 0; }
-      .es-next    { flex-direction: column; gap: 2rem; }
-      .es-next > div:last-child { text-align: left; }
     }
 
     /* FEATURE SCREEN GROUPS */
@@ -266,7 +259,7 @@
       <li><a href="index.html#about">About</a></li>
       <li><a href="profile.html">Profile</a></li>
       <li><a href="index.html#work">Work</a></li>
-      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#awards">Awards &amp; Projects</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -288,7 +281,7 @@
       <li><a href="index.html#about"  class="mobile-link">About</a></li>
       <li><a href="profile.html"      class="mobile-link">Profile</a></li>
       <li><a href="index.html#work"   class="mobile-link">Work</a></li>
-      <li><a href="index.html#awards" class="mobile-link">Awards</a></li>
+      <li><a href="index.html#awards" class="mobile-link">Awards &amp; Projects</a></li>
       <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
     </ul>
   </div>
@@ -308,11 +301,11 @@
         Edu<span>stay</span>
       </h1>
       <p class="es-hero__sub">
-        배움이 머무는 곳 —<br />
-        교육과 숙박을 연결하는 서비스 플랫폼 UX/UI
+        해외 홈스테이로 유학을 떠나는 미성년 학생들을 위한<br />
+        학습·숙박 통합 플랫폼 UX/UI 디자인
       </p>
       <div class="es-hero__award">
-        ✦&ensp;제8회 GCD4FE · 동아시아 최우수 기획상 (Best Planning Award)
+        ✦&ensp;제8회 GCD4FE · 동아시아 우수 기획상 (Best Planning Award)
       </div>
 
       <div class="es-meta">
@@ -347,19 +340,18 @@
       <div class="es-lbl"><span class="es-lbl__bar"></span>01 · Background</div>
 
       <p class="es-lead">
-        배우기 위해 낯선 나라로 떠난다.<br />
-        하지만 말이 통하지 않으면 — 배움도, 머묾도 온전할 수 없다.
+        해외 홈스테이로 유학을 떠나는 미성년 학생들.<br />
+        언어, 신뢰, 학습 연속성 문제를 동시에 겪습니다.
       </p>
 
       <p class="es-body mt-blk">
-        홈스테이 학습자들이 공통적으로 겪는 공백이 세 가지 있다.
-        언어 장벽, 호스트 신뢰 정보 부재, 학습 연속성 단절.
-        Edustay는 이 세 지점을 하나의 플랫폼으로 연결한다.
+        공통적으로 겪는 문제는 언어 장벽, 호스트 신뢰 정보 부재, 학습 연속성 단절 세 가지입니다.<br />
+        Edustay는 이 세 지점을 하나의 플랫폼으로 연결합니다.
       </p>
 
       <div class="es-insight">
         <p class="es-insight__txt">
-          <em>머무는 공간과 사람</em>이 교육 환경이 된다.
+          체류 공간과 호스트가 곧 <em>학습 환경</em>이라는 점을 설계의 전제로 삼았습니다.
         </p>
       </div>
 
@@ -367,32 +359,32 @@
         <div class="es-ob">
           <span class="es-ob__n">01</span>
           <div>
-            <p class="es-ob__title">언어 장벽 — 호스트와 대화가 되지 않는다</p>
+            <p class="es-ob__title">호스트와 언어가 통하지 않습니다</p>
             <p class="es-ob__body">
-              한국 학습자가 외국 호스트에게 입실 일정이나 생활 정보를 묻고 싶어도
-              언어가 달라 소통이 막혔다. 번역 앱을 따로 켜야 하는 번거로움,
-              뉘앙스가 사라진 기계 번역의 어색함이 첫 관계를 어렵게 만들었다.
+              한국인 유학생이 외국 호스트에게 입실 일정이나 생활 정보를 묻고 싶어도
+              언어가 달라 소통이 막혔습니다. 번역 앱을 따로 켜야 하는 번거로움,
+              뉘앙스가 사라진 기계 번역 때문에 첫 소통부터 어려움을 겪었습니다.
             </p>
           </div>
         </div>
         <div class="es-ob">
           <span class="es-ob__n">02</span>
           <div>
-            <p class="es-ob__title">신뢰 공백 — 호스트가 어떤 사람인지 알 수 없다</p>
+            <p class="es-ob__title">호스트에 대한 정보가 부족합니다</p>
             <p class="es-ob__body">
-              별점과 후기만으로는 부족하다. 호스트의 직업, 가족 구성, 생활 방식 —
+              별점과 후기만으로는 부족합니다. 호스트의 직업, 가족 구성, 생활 방식 등
               낯선 집에 머물기 위해 필요한 구체적인 신뢰 정보가
-              기존 플랫폼에는 없었다. 신원 인증도 형식에 불과했다.
+              기존 플랫폼에는 없었습니다. 신원 인증도 형식에 불과했습니다.
             </p>
           </div>
         </div>
         <div class="es-ob">
           <span class="es-ob__n">03</span>
           <div>
-            <p class="es-ob__title">학습 단절 — 떠나 있는 동안 공부가 흩어진다</p>
+            <p class="es-ob__title">체류 중 학습 관리가 끊깁니다</p>
             <p class="es-ob__body">
-              일정 관리, 진도 추적, 학습 목표 유지를 위한 도구가 없었다.
-              홈스테이 기간 동안 학습이 단절되는 구조적 문제였다.
+              일정 관리, 진도 추적, 학습 목표 유지를 위한 도구가 없었습니다.
+              홈스테이 기간 동안 학습이 단절되는 구조적 문제였습니다.
             </p>
           </div>
         </div>
@@ -432,13 +424,13 @@
       <div class="es-lbl"><span class="es-lbl__bar"></span>02 · UX Concept</div>
 
       <p class="es-lead">
-        세 가지 기능이 하나의 여정을 만든다.<br />
+        세 가지 기능이 하나의 여정을 만듭니다.<br />
         학습 관리 → 언어 소통 → 신뢰 확인.
       </p>
 
       <p class="es-body mt-blk">
-        예약 앱이 아니라 학습 여정 전체를 설계했다.
-        AI 코치, AI 번역, 신원 인증 — 세 기능이 하나의 여정 구조를 구성한다.
+        예약이 아니라 학습 여정 전체를 설계 대상으로 삼았습니다.
+        AI 코치, AI 번역, 신원 인증 세 기능으로 여정을 구성했습니다.
       </p>
 
       <div class="es-features">
@@ -447,8 +439,8 @@
           <p class="es-feature__name">AI 학습 코치 · EduChat</p>
           <p class="es-feature__kw">AI Coach · Learning Plan</p>
           <p class="es-feature__desc">
-            홈 화면에서 AI 학습 코치가 맞춤형 플랜을 제안한다.
-            일정 관리, 진도 추적, 포트폴리오, 활동 로그를 하나의 인터페이스로 통합한다.
+            홈 화면에서 AI 학습 코치가 맞춤형 플랜을 제안합니다.
+            일정 관리, 진도 추적, 포트폴리오, 활동 로그를 하나의 인터페이스로 통합합니다.
           </p>
         </div>
         <div class="es-feature">
@@ -456,9 +448,9 @@
           <p class="es-feature__name">AI 자동번역 채팅</p>
           <p class="es-feature__kw">Chat · Auto-Translation</p>
           <p class="es-feature__desc">
-            호스트와의 대화가 언어 장벽 없이 이어진다.
-            채팅 화면에서 AI 번역 토글 하나로 한국어와 영어 사이를 실시간 전환.
-            여러 호스트와의 대화를 하나의 채팅 목록에서 관리한다.
+            호스트와의 대화가 언어 장벽 없이 이어집니다.
+            채팅 화면에서 AI 번역 토글 하나로 한국어와 영어 사이를 실시간 전환합니다.
+            여러 호스트와의 대화를 하나의 채팅 목록에서 관리합니다.
           </p>
         </div>
         <div class="es-feature">
@@ -466,9 +458,9 @@
           <p class="es-feature__name">신분인증 · 호스트 정보</p>
           <p class="es-feature__kw">Trust · Verification</p>
           <p class="es-feature__desc">
-            주민등록증·여권 기반 4단계 신원 인증으로 플랫폼 신뢰를 높인다.
-            호스트 프로필엔 직업·가족 구성·편의시설까지 투명하게 공개된다.
-            별점 이상의 신뢰 — 사람을 보여주는 호스트 페이지.
+            주민등록증·여권 기반 4단계 신원 인증으로 플랫폼 신뢰를 높입니다.
+            호스트 프로필엔 직업·가족 구성·편의시설까지 투명하게 공개됩니다.
+            별점만으로는 부족한 신뢰 정보를 보여주는 호스트 페이지입니다.
           </p>
         </div>
       </div>
@@ -539,12 +531,12 @@
       <div class="es-lbl"><span class="es-lbl__bar"></span>03 · Visual System</div>
 
       <p class="es-lead">
-        여행의 설렘과 공부의 신뢰감.<br />
-        두 감각이 공존하는 색.
+        여행의 설렘과 학습의 신뢰감.<br />
+        두 감각을 함께 담을 수 있는 색을 골랐습니다.
       </p>
 
       <p class="es-body mt-blk">
-        지식의 무게가 있지만 딱딱하지 않다. 학문의 신뢰와 여행의 가능성을 함께 가지는 온도. 보라가 Edustay의 그 온도에 맞는 이유다.
+        지식의 무게감은 있지만 딱딱하지 않은 톤이 필요했습니다. 학문의 신뢰감과 여행의 가능성을 동시에 전달할 수 있다는 점에서 보라를 선택했습니다.
       </p>
 
       <div class="es-swatches">
@@ -570,14 +562,14 @@
           <div class="es-cn__dot" style="background:#6C47D4;"></div>
           <p class="es-cn__name">Edu Purple #6C47D4</p>
           <p class="es-cn__why">
-            지식의 무게와 여행의 설렘 사이. 딱딱하지도, 가볍지도 않은 온도 — Edu Purple이 그 지점이다.
+            학문의 신뢰감과 여행의 가능성, 그 중간 지점에 있는 색입니다.
           </p>
         </div>
         <div class="es-cn">
           <div class="es-cn__dot" style="background:#4A2FA8;"></div>
           <p class="es-cn__name">Deep Purple #4A2FA8</p>
           <p class="es-cn__why">
-            CTA·헤더·강조에 사용. Primary Purple과 조합해 명도 계층을 구성한다.
+            CTA·헤더·강조에 사용합니다. Primary Purple과 조합해 명도 계층을 구성합니다.
           </p>
         </div>
       </div>
@@ -590,45 +582,40 @@
       <div class="es-lbl"><span class="es-lbl__bar"></span>04 · Outcome</div>
 
       <p class="es-lead">
-        동아시아 최우수 기획상 수상까지.<br />
-        배움과 여행이 만나는 지점을 설계했다.
+        GCD4FE 동아시아 우수 기획상 수상.<br />
+        학습과 숙박을 연결하는 서비스로 완성했습니다.
       </p>
 
       <p class="es-body mt-blk">
-        사용자 인터뷰로 문제를 정의하고, 팀 4명이 서비스 구조와 UX를 설계했다.
-        <strong>제8회 GCD4FE 동아시아 최우수 기획상 수상.</strong>
+        사용자 인터뷰로 문제를 정의하고, 팀 4명이 서비스 구조와 UX를 설계했습니다.<br />
+        <strong>그 결과 제8회 GCD4FE 동아시아 우수 기획상을 수상했습니다.</strong>
       </p>
 
       <div class="es-outcomes">
         <div class="es-outcome">
-          <span class="es-outcome__icon">🤖</span>
+          <span class="es-outcome__icon">✎</span>
           <p class="es-outcome__title">AI 학습 코치 · EduChat</p>
-          <p class="es-outcome__desc">홈 화면에서 AI 코치가 학습 플랜·진도·포트폴리오를 관리. 홈스테이 기간 동안 학습을 연속적으로 관리한다.</p>
+          <p class="es-outcome__desc">홈 화면에서 AI 코치가 학습 플랜·진도·포트폴리오를 관리합니다. 홈스테이 기간 동안 학습을 연속적으로 관리할 수 있습니다.</p>
         </div>
         <div class="es-outcome">
-          <span class="es-outcome__icon">💬</span>
+          <span class="es-outcome__icon">⇄</span>
           <p class="es-outcome__title">AI 자동번역 채팅</p>
-          <p class="es-outcome__desc">한국어·영어 실시간 전환. 언어 장벽 없이 호스트와 자연스럽게 소통한다.</p>
+          <p class="es-outcome__desc">한국어·영어 실시간 전환을 지원합니다. 언어 장벽 없이 호스트와 소통할 수 있습니다.</p>
         </div>
         <div class="es-outcome">
-          <span class="es-outcome__icon">🔐</span>
+          <span class="es-outcome__icon">✓</span>
           <p class="es-outcome__title">철저한 신분인증</p>
-          <p class="es-outcome__desc">주민등록증·여권 기반 4단계 인증. 플랫폼 내 모든 사용자의 신원이 확인된다.</p>
+          <p class="es-outcome__desc">주민등록증·여권 기반 4단계 인증으로 플랫폼 내 모든 사용자의 신원을 확인합니다.</p>
         </div>
         <div class="es-outcome">
-          <span class="es-outcome__icon">🏠</span>
+          <span class="es-outcome__icon">⌂</span>
           <p class="es-outcome__title">투명한 호스트 정보</p>
-          <p class="es-outcome__desc">직업·가족 구성·편의시설까지 공개. 별점 이상의 신뢰를 만드는 호스트 프로필.</p>
+          <p class="es-outcome__desc">직업·가족 구성·편의시설까지 공개해 별점만으로는 부족한 신뢰 정보를 제공합니다.</p>
         </div>
         <div class="es-outcome">
-          <span class="es-outcome__icon">📅</span>
+          <span class="es-outcome__icon">☰</span>
           <p class="es-outcome__title">학습 플랜 · 활동 로그</p>
-          <p class="es-outcome__desc">일정, 미션, 진도율을 한눈에 추적. 홈스테이 기간 학습 관리를 하나의 화면으로 처리한다.</p>
-        </div>
-        <div class="es-outcome">
-          <span class="es-outcome__icon">🏆</span>
-          <p class="es-outcome__title">GCD4FE 수상</p>
-          <p class="es-outcome__desc">제8회 동아시아 최우수 기획상. 문제 정의와 기획력을 인정받다.</p>
+          <p class="es-outcome__desc">일정, 미션, 진도율을 한 화면에서 추적합니다. 홈스테이 기간 학습 관리를 단일 화면으로 처리합니다.</p>
         </div>
       </div>
     </div>
@@ -639,13 +626,12 @@
     <div class="es">
       <p class="es-reflection__lbl">Design Reflection</p>
       <p class="es-reflection__txt">
-        배움이 머무는 곳 —<br />
-        <em>그 말이 앱 이름이 되고, UX 전략이 됐다.</em>
+        홈스테이로 유학을 떠나는 미성년 학생들의 학습 경험.<br />
+        <em>하나의 서비스 구조로 설계했습니다.</em>
       </p>
       <p class="es-reflection__note">
-        프로젝트를 시작할 때 가장 먼저 한 질문은 "사람들은 왜 배우러 떠나는가"였다.
-        장소가 달라지면 배움의 밀도가 달라진다는 것.
-        GCD4FE 수상이 그 방향을 확인해줬다.
+        언어, 신뢰, 학습 연속성이라는 세 가지 문제에서 출발해 서비스 구조와 UX를 설계했습니다.
+        GCD4FE 동아시아 우수 기획상 수상으로 방향성을 검증받았습니다.
       </p>
     </div>
   </div>

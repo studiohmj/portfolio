@@ -75,7 +75,7 @@ html.dark-mode {
    2. RESET & BASE
    -------------------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--font);
@@ -128,9 +128,9 @@ em {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--t3);
   margin-bottom: 1.25rem;
 }
 
@@ -402,9 +402,8 @@ html.dark-mode .hero-wrapper {
   color: #EFF6FF;
 }
 html.dark-mode .hero__structure {
-  opacity: 1;
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.44) 35%, rgba(0,0,0,0.12) 65%, rgba(0,0,0,0.07) 100%);
-  mask-image:         linear-gradient(to right, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.44) 35%, rgba(0,0,0,0.12) 65%, rgba(0,0,0,0.07) 100%);
+  z-index: 2;
+  opacity: 0.07;
 }
 .hero {
   min-height: 100svh;
@@ -585,7 +584,7 @@ html.dark-mode .hero__structure {
 .hero__role-sub {
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--primary);
   margin-bottom: 0.35rem;
@@ -709,11 +708,11 @@ html.dark-mode .hero-wrapper .btn--ghost {
 
 .line {
   opacity: 0;
-  transform: translateY(40px);
-  animation: rise 0.6s ease forwards;
+  transform: translateY(14px);
+  animation: rise 0.45s ease forwards;
 }
-.line:nth-child(2) { animation-delay: 0.15s; }
-.line:nth-child(3) { animation-delay: 0.3s; }
+.line:nth-child(2) { animation-delay: 0.08s; }
+.line:nth-child(3) { animation-delay: 0.16s; }
 
 /* ---------- cursor glow — 비활성화 ---------- */
 .glow { display: none; }
@@ -724,22 +723,22 @@ html.dark-mode .hero-wrapper .btn--ghost {
 /* Bottom block */
 .hero__bottom {
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease forwards;
-  animation-delay: 0.55s;
+  transform: translateY(14px);
+  animation: fadeUp 0.5s ease forwards;
+  animation-delay: 0.24s;
 }
 
 /* Generic reveal-text (statement lines use this) */
 .reveal-text {
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease forwards;
+  transform: translateY(14px);
+  animation: fadeUp 0.5s ease forwards;
 }
-.reveal-text:nth-child(1) { animation-delay: 0.05s; }
-.reveal-text:nth-child(2) { animation-delay: 0.22s; }
-.reveal-text:nth-child(3) { animation-delay: 0.38s; }
-.reveal-text:nth-child(4) { animation-delay: 0.52s; }
-.reveal-text:nth-child(5) { animation-delay: 0.65s; }
+.reveal-text:nth-child(1) { animation-delay: 0.03s; }
+.reveal-text:nth-child(2) { animation-delay: 0.08s; }
+.reveal-text:nth-child(3) { animation-delay: 0.13s; }
+.reveal-text:nth-child(4) { animation-delay: 0.18s; }
+.reveal-text:nth-child(5) { animation-delay: 0.23s; }
 
 /* --------------------------------------------------------------------------
    7. BUTTONS
@@ -763,11 +762,11 @@ html.dark-mode .hero-wrapper .btn--ghost {
   border: 1px solid var(--primary);
 }
 .btn--primary:hover {
-  transform: translateY(-2px);
   background: var(--primary-soft);
   border-color: var(--primary-soft);
   color: #fff;
 }
+.btn--primary:active { transform: scale(0.97); }
 
 .btn--ghost {
   background: transparent;
@@ -775,49 +774,11 @@ html.dark-mode .hero-wrapper .btn--ghost {
   border: 1px solid var(--border-mid);
 }
 .btn--ghost:hover {
-  transform: translateY(-2px);
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
 }
-
-/* --------------------------------------------------------------------------
-   8. MARQUEE
-   -------------------------------------------------------------------------- */
-.marquee {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 0.95rem 0;
-  overflow: hidden;
-  background: var(--bg-alt);
-}
-
-.marquee__track {
-  display: flex;
-  gap: 0;
-  white-space: nowrap;
-  animation: marquee 55s linear infinite;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--t2);
-  opacity: 0.82;
-}
-.marquee__track:hover { animation-play-state: paused; }
-.marquee__track > span { padding: 0 1.8rem; }
-.marquee__track span:nth-child(even) {
-  color: var(--t3);
-  padding: 0 0.3rem;
-  font-size: 0.5rem;
-  font-weight: 300;
-  letter-spacing: 0;
-}
-
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+.btn--ghost:active { transform: scale(0.97); }
 
 /* --------------------------------------------------------------------------
    9. ABOUT — editorial portfolio layout
@@ -937,9 +898,6 @@ html.dark-mode .about__photo--dark  { display: block; }
 }
 
 .about__approach-item {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 1rem;
   padding: 1.1rem 0;
   border-bottom: 1px solid var(--border);
   transition: padding-left var(--dur) var(--ease),
@@ -948,15 +906,6 @@ html.dark-mode .about__photo--dark  { display: block; }
 .about__approach-item:hover {
   padding-left: 0.75rem;
   background: var(--bg-alt);
-}
-
-.about__approach-num {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--primary);
-  padding-top: 2px;
-  font-feature-settings: 'tnum';
 }
 
 /* H3 — 24px / 600 */
@@ -995,9 +944,9 @@ html.dark-mode .about__photo--dark  { display: block; }
   display: block;
   font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--t3);
   margin-bottom: 1.25rem;
 }
 
@@ -1362,9 +1311,9 @@ html.dark-mode .about__photo--dark  { display: block; }
   margin-bottom: 3rem;
   font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--t3);
 }
 
 .work__group-line {
@@ -1376,6 +1325,7 @@ html.dark-mode .about__photo--dark  { display: block; }
 /* ── Project item (shared) ───────────────────────────── */
 .proj {
   position: relative;
+  display: block;
 }
 
 /* Image container — fixed 4:3 across all cards */
@@ -1411,28 +1361,6 @@ html.dark-mode .about__photo--dark  { display: block; }
 /* Hover — subtle scale only */
 .proj:hover .proj__img-ph,
 .proj:hover .proj__img { transform: scale(1.04); }
-
-/* View pill — appears on hover */
-.proj__view-pill {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #ffffff;
-  background: rgba(13, 13, 13, 0.75);
-  padding: 0.45rem 1rem;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
-  backdrop-filter: blur(8px);
-}
-.proj:hover .proj__view-pill {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Info block */
 .proj__info {
@@ -1523,7 +1451,7 @@ html.dark-mode .about__photo--dark  { display: block; }
 #brandingContent .proj { counter-increment: brand-n; }
 #brandingContent .proj__meta::before {
   content: counter(brand-n, decimal-leading-zero) ' · ';
-  color: var(--primary);
+  color: var(--t3);
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -1532,7 +1460,7 @@ html.dark-mode .about__photo--dark  { display: block; }
 #uxuiContent .proj { counter-increment: uxui-n; }
 #uxuiContent .proj__meta::before {
   content: counter(uxui-n, decimal-leading-zero) ' · ';
-  color: var(--primary);
+  color: var(--t3);
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -1547,6 +1475,22 @@ html.dark-mode .about__photo--dark  { display: block; }
    -------------------------------------------------------------------------- */
 .awards__list {
   border-top: 1px solid var(--border);
+}
+
+.awards .section__header {
+  border-bottom: none;
+}
+
+.awards__group-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+.awards__group-title:not(:first-child) {
+  margin-top: 3rem;
 }
 
 .award-item {
@@ -1578,7 +1522,8 @@ html.dark-mode .about__photo--dark  { display: block; }
   font-size: 1rem;
   font-weight: 700;
   color: var(--t1);
-  margin-bottom: 0.25rem;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
   transition: color var(--dur) var(--ease);
 }
 .award-item:hover .award-item__title { color: var(--accent); }
@@ -1593,10 +1538,10 @@ html.dark-mode .about__photo--dark  { display: block; }
 .award-item__badge {
   font-size: 0.58rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--primary);
-  border: 1px solid var(--primary);
+  color: var(--t2);
+  border: 1px solid var(--border-mid);
   padding: 0.3rem 0.75rem;
   white-space: nowrap;
   flex-shrink: 0;
@@ -1695,11 +1640,11 @@ html.dark-mode .about__photo--dark  { display: block; }
   height: 36px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
-  overflow: hidden;
 }
 .proj-pager__link:last-child {
   justify-self: end;
 }
+
 .proj-pager__link {
   display: inline-flex;
   align-items: center;
@@ -1711,8 +1656,6 @@ html.dark-mode .about__photo--dark  { display: block; }
   color: var(--t3);
   text-decoration: none;
   transition: color var(--dur) ease;
-  overflow: hidden;
-  min-width: 0;
 }
 .proj-pager__link:hover { color: var(--primary); }
 
@@ -1900,39 +1843,6 @@ html.dark-mode .pexp-mini-item {
   .contact__socials    { gap: 1.25rem; }
   .contact__email      { word-break: break-all; font-size: clamp(0.85rem, 3.5vw, 1.2rem); }
   .footer__inner       { flex-direction: column; align-items: center; gap: 0.5rem; }
-
-  /* 터치 기기에서 프로젝트 링크 항상 표시 */
-  .proj__view-pill     { opacity: 1; transform: translateY(0); }
-
-  /* 터치 타깃 최소 44px 확보 */
-  .nav__hamburger      { min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
-  .theme-toggle        { width: 44px; height: 44px; }
-  .profile-drawer__close { width: 40px; height: 40px; font-size: 1.1rem; }
-
-  /* 모바일 히어로 배경 이미지 중앙 정렬 */
-  .hero-wrapper        { background-position: center top; }
-  .hero-wrapper::before {
-    background: linear-gradient(
-      to bottom,
-      rgba(238, 242, 248, 0.88) 0%,
-      rgba(238, 242, 248, 0.55) 55%,
-      rgba(238, 242, 248, 0.12) 100%
-    );
-  }
-  html.dark-mode .hero-wrapper::after {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(4, 10, 24, 0.88) 0%,
-        rgba(4, 10, 24, 0.55) 55%,
-        rgba(4, 10, 24, 0.12) 100%
-      ),
-      url('다크모드.webp') center top / cover;
-  }
-
-  /* 프로젝트 페이저 — 긴 이름 처리 */
-  .proj-pager__link    { font-size: 0.58rem; }
-  .proj-pager__all     { font-size: 0.55rem; }
 }
 
 @media (max-width: 480px) {
@@ -1947,31 +1857,9 @@ html.dark-mode .pexp-mini-item {
   .award-item__badge  { grid-column: 2; justify-self: start; font-size: 0.48rem; padding: 0.2rem 0.5rem; letter-spacing: 0.08em; }
   .award-item__title  { font-size: 0.82rem; }
 
-  /* Marquee smaller */
-  .marquee__track     { font-size: 0.58rem; gap: 1.25rem; }
-
   /* Hero CTA buttons stacked */
   .hero__cta          { flex-direction: column; width: 100%; }
   .btn                { width: 100%; justify-content: center; }
-
-  /* 히어로 패딩 줄이기 */
-  .hero               { padding-top: calc(var(--nav-h) + 1.5rem); }
-
-  /* 워크 섹션 그룹 헤더 간격 */
-  .work__group-header { padding: 2rem 0 1.25rem; }
-
-  /* 수상 항목 조직명 줄바꿈 허용 */
-  .award-item__org    { word-break: keep-all; line-height: 1.5; }
-}
-
-/* 터치 기기 hover 효과 제거 */
-@media (hover: none) {
-  .about__approach-item:hover { padding-left: 0; background: none; }
-  .award-item:hover           { padding-left: 0.5rem; background: none; }
-  .proj:hover .proj__img,
-  .proj:hover .proj__img-ph   { transform: none; }
-  .stat:hover                 { background: none; }
-  .tag:hover                  { border-color: var(--border-mid); color: var(--t2); background: none; }
 }
 
 /* --------------------------------------------------------------------------
@@ -2094,7 +1982,7 @@ html.dark-mode .pexp-mini-item {
 .drawer-hero__label {
   font-size: 0.58rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--primary);
   display: block;
@@ -2138,7 +2026,7 @@ html.dark-mode .pexp-mini-item {
 .drawer-block__title {
   font-size: 0.57rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--primary);
   display: block;

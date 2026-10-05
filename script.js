@@ -138,9 +138,15 @@ window.scrollTo(0, 0);
 
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
-    });
+    const atBottom = sections.length > 0 &&
+      window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+    if (atBottom) {
+      current = sections[sections.length - 1].id;
+    } else {
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      });
+    }
     navLinks.forEach(a => {
       a.classList.toggle('active-link', a.getAttribute('href') === `#${current}`);
     });
