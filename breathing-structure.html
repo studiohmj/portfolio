@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
-  <title>Breathing Structure — Jang Hoon Min</title>
-  <meta name="description" content="Breathing Structure — 호흡에 반응하는 Three.js 인터랙티브 설치 작품" />
+  <title>Breathing Structure | Jang Hoon Min</title>
+  <meta name="description" content="Breathing Structure | 호흡에 반응하는 Three.js 인터랙티브 설치 작품" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -136,7 +136,7 @@
     /* ── Insight ── */
     .bs-insight {
       margin: 48px 0; padding: 32px 40px;
-      border-left: 3px solid var(--bs);
+      border-left: none;
       background: var(--bs-lt);
     }
     .bs-insight__label {
@@ -296,7 +296,7 @@
   <div class="proj-pager">
     <a href="bloom.html" class="proj-pager__link">← HANDS BLOOM</a>
     <a href="index.html#work" class="proj-pager__all">All Work</a>
-    <a href="edustay.html" class="proj-pager__link">Edustay →</a>
+    <a href="kk.html" class="proj-pager__link">KK Futsal Park →</a>
   </div>
 
   <div class="mobile-menu" id="mobileMenu">
@@ -320,14 +320,14 @@
         </div>
         <h1 class="bs-hero__title fade-in">Breathing<br>Structure</h1>
         <p class="bs-hero__tagline fade-in">
-          기하학 구조물의 팽창·수축을 실시간으로 구현한 3D 인터랙티브 작품.<br />
-          Vite + React + Three.js, Vercel 배포.
+          손의 움직임에 따라 숨 쉬듯 열리고 닫히는 3D 인터랙티브 설치 작품.<br />
+          MediaPipe 손 인식과 Three.js, GLSL 셰이더로 만들었습니다.
         </p>
         <dl class="bs-hero__dl fade-in">
           <div><dt>Role</dt><dd>Creative Developer</dd></div>
           <div><dt>Type</dt><dd>Interactive Installation</dd></div>
           <div><dt>Year</dt><dd>2026</dd></div>
-          <div><dt>Tools</dt><dd>Vite · React · Three.js · WebGL</dd></div>
+          <div><dt>Tools</dt><dd>Vite, React, Three.js, GLSL, MediaPipe</dd></div>
           <div><dt>Deploy</dt><dd>Vercel</dd></div>
           <div><dt>Live</dt><dd><a href="https://breathing-structure.vercel.app/" target="_blank" rel="noopener" class="bs-hero__live">Visit ↗</a></dd></div>
         </dl>
@@ -343,36 +343,32 @@
   <!-- 01 Background -->
   <section class="bs-section">
     <div class="container">
-      <span class="bs-section__num fade-in">01 — Background</span>
+      <span class="bs-section__num fade-in">Background</span>
       <div class="bs-split fade-in">
         <div>
-          <div class="bs-split__num">01</div>
           <div class="bs-split__title">개념과 출발점</div>
         </div>
         <div>
-          <p class="bs-lead">기하학적 형태가 유기적으로 팽창·수축합니다.</p>
-          <p class="bs-body">규칙적인 기하학 구조물에 사인파 기반 스케일 변형을 적용했습니다. React 컴포넌트 안에서 Three.js 씬을 관리하고, requestAnimationFrame 루프로 지속 애니메이션됩니다.</p>
+          <p class="bs-lead">손을 펴고 쥐면 3D 구조체가 열리고 닫힙니다.</p>
+          <p class="bs-body">피보나치 구 배열로 배치한 점 420개를 세 겹의 껍질(240개, 120개, 60개)로 나누고, 가까운 점끼리 선으로 이어 구조체를 만들었습니다. 이 구조체가 손을 펴고 쥐는 동작에 따라 숨 쉬듯 팽창하고 수축합니다.</p>
 
           <div class="bs-insight fade-in">
             <div class="bs-insight__label">Concept</div>
-            <p class="bs-insight__text">기하학적 형태가 유기적 움직임을 가지면 구조 자체가 살아있는 것처럼 인식됩니다.</p>
+            <p class="bs-insight__text">손이 펼쳐진 정도를 구조체가 팽창하는 정도에 연결했습니다.</p>
           </div>
 
           <div class="bs-obs fade-in">
             <div class="bs-obs__item">
-              <span class="bs-obs__num">01</span>
-              <p class="bs-obs__title">애니메이션 주기</p>
-              <p class="bs-obs__body">사인파 기반 팽창·수축입니다. 진동 주기와 진폭은 시지각에서 '호흡'으로 인식되는 임계값을 기준으로 조정했습니다.</p>
+              <p class="bs-obs__title">호흡</p>
+              <p class="bs-obs__body">버텍스 셰이더에서 사인파로 반지름 방향의 팽창을 계산합니다. 손을 펼친 정도에 따라 팽창 폭이 3%에서 16%까지 달라집니다.</p>
             </div>
             <div class="bs-obs__item">
-              <span class="bs-obs__num">02</span>
-              <p class="bs-obs__title">지오메트리 선택</p>
-              <p class="bs-obs__body">폴리곤 수가 많은 복잡한 메시는 변형의 윤곽이 불분명해집니다. 구·토러스 중심의 단순 지오메트리를 사용해 스케일 변형이 즉각 인식되도록 했습니다.</p>
+              <p class="bs-obs__title">세 겹의 구조</p>
+              <p class="bs-obs__body">바깥 껍질일수록 점이 많고 선이 진하며, 안쪽으로 갈수록 투명해져 구조체 안쪽까지 깊이가 느껴지도록 했습니다.</p>
             </div>
             <div class="bs-obs__item">
-              <span class="bs-obs__num">03</span>
-              <p class="bs-obs__title">공간감</p>
-              <p class="bs-obs__body">FogExp2와 방향성 조명(DirectionalLight)을 조합해 2D 평면이 아닌 3D 공간감을 부여했습니다.</p>
+              <p class="bs-obs__title">빛</p>
+              <p class="bs-obs__body">UnrealBloom 후처리로 중심의 빛과 선의 발광을 만들고, 충격파나 에너지 폭발이 일어날 때 발광 세기를 순간적으로 높였습니다.</p>
             </div>
           </div>
         </div>
@@ -380,37 +376,36 @@
     </div>
   </section>
 
+  <div class="fade-in" style="max-width:1440px;margin:0 auto;padding:0 0 0;">
+    <img src="메인 이미지/12. 인터렉션 프로젝트/breathing-structure 2p.webp" alt="Breathing Structure 콘셉트와 제스처 정리" style="width:100%;height:auto;display:block;" />
+  </div>
+
   <!-- 02 Technical Design -->
   <section class="bs-section bs-section--alt">
     <div class="container">
-      <span class="bs-section__num fade-in">02 — Technical Design</span>
+      <span class="bs-section__num fade-in">Technical Design</span>
       <div class="bs-split fade-in">
         <div>
-          <div class="bs-split__num">02</div>
           <div class="bs-split__title">기술 설계</div>
         </div>
         <div>
-          <p class="bs-lead">React 안에서 Three.js 씬을 관리합니다.</p>
-          <p class="bs-body">useEffect로 마운트 시 씬을 초기화하고, requestAnimationFrame 루프를 컴포넌트 생명주기에 연결했습니다. 언마운트 시 renderer와 geometry를 정리해 메모리 누수를 방지합니다.</p>
+          <p class="bs-lead">손 인식과 셰이더를 한 렌더 루프 안에서 연결했습니다.</p>
+          <p class="bs-body">MediaPipe로 읽은 손 모양을 상태 저장소(Zustand)에 기록하고, 매 프레임 그 값을 셰이더의 유니폼(펼침 정도, 에너지, 손 위치)으로 넘겨 구조체를 움직입니다. 컴포넌트가 사라질 때는 렌더러와 지오메트리를 정리해 메모리 누수를 막았습니다.</p>
 
           <div class="bs-decisions fade-in">
             <div class="bs-decision">
-              <span class="bs-decision__num">01</span>
-              <p class="bs-decision__title">Vite HMR</p>
-              <p class="bs-decision__body">HMR로 씬 파라미터를 실시간 수정·확인합니다. 렌더링 순서나 애니메이션 파라미터 튜닝 주기가 빠릅니다.</p>
+              <p class="bs-decision__title">손 제스처</p>
+              <p class="bs-decision__body">손 펼치기, 주먹 쥐기, 검지 가리키기, 록 사인 네 가지를 구분해 확장, 압축, 에너지 빔, 충격파로 연결했습니다.</p>
             </div>
             <div class="bs-decision">
-              <span class="bs-decision__num">02</span>
-              <p class="bs-decision__title">Three.js</p>
-              <p class="bs-decision__body">조명·지오메트리·카메라 컨트롤·안개를 Three.js API로 일괄 처리합니다. WebGL 셰이더를 직접 작성하지 않아도 필요한 렌더링 파이프라인을 구성할 수 있습니다.</p>
+              <p class="bs-decision__title">GLSL 셰이더</p>
+              <p class="bs-decision__body">구조체와 입자의 움직임을 셰이더로 직접 작성했습니다. 점마다 다른 시드값을 주어 각자 조금씩 다르게 떨리도록 했습니다.</p>
             </div>
             <div class="bs-decision">
-              <span class="bs-decision__num">03</span>
-              <p class="bs-decision__title">애니메이션 루프</p>
-              <p class="bs-decision__body">requestAnimationFrame마다 Date.now() 기반 시간값을 사인파에 입력해 구조물 스케일을 갱신합니다. 입력 없이도 지속 애니메이션됩니다.</p>
+              <p class="bs-decision__title">마우스 모드</p>
+              <p class="bs-decision__body">카메라를 허용하지 않아도 체험할 수 있도록 스크롤로 확장과 압축, 길게 눌렀다 놓으면 에너지 폭발, 우클릭은 충격파, 더블클릭은 팔레트 전환으로 연결했습니다.</p>
             </div>
             <div class="bs-decision">
-              <span class="bs-decision__num">04</span>
               <p class="bs-decision__title">Vercel 배포</p>
               <p class="bs-decision__body">Vite 빌드 후 Vercel에 배포합니다. WebGL 기반이기 때문에 브라우저만 있으면 별도 런타임 없이 실행됩니다.</p>
             </div>
@@ -419,20 +414,20 @@
           <span class="bs-section__label fade-in" style="margin-top:64px; margin-bottom:24px;">Tech Stack</span>
           <div class="bs-stack fade-in">
             <div class="bs-stack__item">
-              <div class="bs-stack__name">Vite</div>
-              <div class="bs-stack__role">빌드 툴 · HMR 개발 환경</div>
+              <div class="bs-stack__name">GLSL</div>
+              <div class="bs-stack__role">구조체와 입자 셰이더</div>
             </div>
             <div class="bs-stack__item">
               <div class="bs-stack__name">React</div>
-              <div class="bs-stack__role">UI 컴포넌트 · 상태 관리</div>
+              <div class="bs-stack__role">UI 컴포넌트, 상태 관리</div>
             </div>
             <div class="bs-stack__item">
               <div class="bs-stack__name">Three.js</div>
-              <div class="bs-stack__role">3D 씬 · 지오메트리 · 조명</div>
+              <div class="bs-stack__role">3D 씬, 후처리, 카메라</div>
             </div>
             <div class="bs-stack__item">
-              <div class="bs-stack__name">WebGL</div>
-              <div class="bs-stack__role">GPU 렌더링 · 셰이더</div>
+              <div class="bs-stack__name">MediaPipe</div>
+              <div class="bs-stack__role">실시간 손 제스처 인식</div>
             </div>
           </div>
         </div>
@@ -443,9 +438,9 @@
   <!-- 03 Visual System -->
   <section class="bs-section">
     <div class="container">
-      <span class="bs-section__label fade-in">03 — Visual System</span>
-      <p class="bs-lead fade-in">Deep navy, blue accent.</p>
-      <p class="bs-body fade-in">어두운 배경에 시안·스카이블루 계열 조명을 써서 차갑고 공간감 있는 느낌을 냈습니다. 구조물의 엣지와 조명에 블루 계열을 썼습니다.</p>
+      <span class="bs-section__label fade-in">Visual System</span>
+      <p class="bs-lead fade-in">어두운 배경과 8가지 색상 팔레트</p>
+      <p class="bs-body fade-in">어두운 배경 위에 중심의 빛과 선만 드러나도록 했습니다. 기본은 차가운 블루 팔레트이고, 더블클릭이나 V 키로 바이올렛, 엠버, 보이드 등 8가지 팔레트를 오갑니다.</p>
 
       <div class="bs-swatches fade-in">
         <div class="bs-swatch" style="background:#020408;">
@@ -454,28 +449,28 @@
             <div class="bs-swatch__name" style="color:rgba(255,255,255,0.4);">Deep Space</div>
           </div>
         </div>
-        <div class="bs-swatch" style="background:#4fc3f7;">
+        <div class="bs-swatch" style="background:#2255cc;">
           <div>
-            <div class="bs-swatch__hex" style="color:rgba(0,0,0,0.8);">#4FC3F7</div>
-            <div class="bs-swatch__name" style="color:rgba(0,0,0,0.5);">Sky Cyan</div>
+            <div class="bs-swatch__hex" style="color:rgba(255,255,255,0.9);">#2255CC</div>
+            <div class="bs-swatch__name" style="color:rgba(255,255,255,0.6);">Cold</div>
           </div>
         </div>
-        <div class="bs-swatch" style="background:#0288d1;">
+        <div class="bs-swatch" style="background:#5510cc;">
           <div>
-            <div class="bs-swatch__hex" style="color:rgba(255,255,255,0.9);">#0288D1</div>
-            <div class="bs-swatch__name" style="color:rgba(255,255,255,0.6);">Structure Blue</div>
+            <div class="bs-swatch__hex" style="color:rgba(255,255,255,0.9);">#5510CC</div>
+            <div class="bs-swatch__name" style="color:rgba(255,255,255,0.6);">Violet</div>
           </div>
         </div>
-        <div class="bs-swatch" style="background:#041525;">
+        <div class="bs-swatch" style="background:#cc1820;">
           <div>
-            <div class="bs-swatch__hex" style="color:rgba(255,255,255,0.7);">#041525</div>
-            <div class="bs-swatch__name" style="color:rgba(255,255,255,0.4);">Deep Navy</div>
+            <div class="bs-swatch__hex" style="color:rgba(255,255,255,0.7);">#CC1820</div>
+            <div class="bs-swatch__name" style="color:rgba(255,255,255,0.4);">Ember</div>
           </div>
         </div>
-        <div class="bs-swatch" style="background:rgba(79,195,247,0.07); border:1px solid rgba(79,195,247,0.12);">
+        <div class="bs-swatch" style="background:#405060;">
           <div>
-            <div class="bs-swatch__hex" style="color:rgba(79,195,247,0.6);">Fog Glow</div>
-            <div class="bs-swatch__name" style="color:rgba(79,195,247,0.35);">Ambient Fog</div>
+            <div class="bs-swatch__hex" style="color:rgba(255,255,255,0.8);">#405060</div>
+            <div class="bs-swatch__name" style="color:rgba(255,255,255,0.5);">Void</div>
           </div>
         </div>
       </div>
@@ -485,42 +480,46 @@
   <!-- 04 Outcome -->
   <section class="bs-section bs-section--alt">
     <div class="container">
-      <span class="bs-section__num fade-in">04 — Outcome</span>
-      <p class="bs-lead fade-in">Runs in the browser. No install.</p>
-      <p class="bs-body fade-in">마우스로 카메라 회전·줌 조작이 가능하고, 구조물은 입력 없이 사인파 기반으로 지속 애니메이션됩니다.</p>
+      <span class="bs-section__num fade-in">Outcome</span>
+      <p class="bs-lead fade-in">카메라가 없어도 체험할 수 있습니다.</p>
+      <p class="bs-body fade-in">카메라를 허용하면 손으로, 허용하지 않으면 마우스와 키보드로 같은 반응을 경험합니다.</p>
 
       <div class="bs-outcome fade-in">
         <div class="bs-outcome__item">
           <span class="bs-outcome__label">인터랙션</span>
-          <p class="bs-outcome__title">OrbitControls + 자율 애니메이션</p>
-          <p class="bs-outcome__body">OrbitControls로 카메라 회전·줌·패닝을 지원합니다. 구조물은 사용자 입력 없이 requestAnimationFrame 루프에서 사인파로 지속 변형됩니다.</p>
+          <p class="bs-outcome__title">손 제스처와 마우스 조작</p>
+          <p class="bs-outcome__body">손 제스처 네 가지와 마우스, 키보드 조작이 같은 상태값을 바꾸도록 설계해 입력 방식과 상관없이 같은 경험을 줍니다.</p>
         </div>
         <div class="bs-outcome__item">
           <span class="bs-outcome__label">배포</span>
-          <p class="bs-outcome__title">Vercel — 브라우저에서 즉시 실행</p>
+          <p class="bs-outcome__title">Vercel, 브라우저에서 즉시 실행</p>
           <p class="bs-outcome__body">WebGL 기반입니다. 브라우저만 있으면 별도 런타임 없이 실행되며, URL로 즉시 공유됩니다.</p>
         </div>
         <div class="bs-outcome__item">
           <span class="bs-outcome__label">구조</span>
-          <p class="bs-outcome__title">React–Three.js 렌더 루프 통합</p>
-          <p class="bs-outcome__body">useEffect 기반 씬 초기화·루프 관리·클린업 패턴입니다. React 생명주기와 WebGL 렌더 루프를 통합할 때 발생하는 메모리 관리 이슈를 처리했습니다.</p>
+          <p class="bs-outcome__title">React와 Three.js 렌더 루프 통합</p>
+          <p class="bs-outcome__body">useEffect 기반 씬 초기화, 루프 관리, 클린업 패턴입니다. React 생명주기와 WebGL 렌더 루프를 통합할 때 발생하는 메모리 관리 이슈를 처리했습니다.</p>
         </div>
         <div class="bs-outcome__item">
           <span class="bs-outcome__label">결과</span>
-          <p class="bs-outcome__title">기하학 구조물의 유기적 움직임</p>
-          <p class="bs-outcome__body">규칙적인 기하학 형태가 사인파 기반 스케일 변형을 통해 유기적인 것처럼 인식되는 효과를 구현했습니다.</p>
+          <p class="bs-outcome__title">숨 쉬는 구조체</p>
+          <p class="bs-outcome__body">규칙적인 점과 선의 구조가 손의 움직임에 따라 숨 쉬듯 반응하는 경험을 만들었습니다.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="fade-in" style="max-width:1440px;margin:0 auto;padding:0 0 0;">
+    <img src="메인 이미지/12. 인터렉션 프로젝트/breathing-structure 3p.webp" alt="Breathing Structure 체험 화면과 색상 팔레트" style="width:100%;height:auto;display:block;" />
+  </div>
 
   <!-- Reflection -->
   <section class="bs-reflection">
     <div class="container">
       <div class="bs-reflection__inner fade-in">
         <span class="bs-reflection__label">Reflection</span>
-        <p class="bs-reflection__quote">"기하학적 형태는 정적일 때보다<br />움직일 때 더 많은 것을 이야기한다."</p>
-        <p class="bs-reflection__body">정적 오브젝트와 움직이는 오브젝트의 차이는 기술이 아니라 인식에 있습니다. 같은 구라도 팽창·수축이 더해지면 살아있는 것처럼 읽힙니다. React와 Three.js의 통합 구조는 씬의 재사용성과 상태 관리 측면에서 명확한 장점이 있습니다.</p>
+        <p class="bs-reflection__quote">"같은 구라도 움직이면<br />다르게 보입니다."</p>
+        <p class="bs-reflection__body">구에 팽창과 수축만 더해도 숨 쉬는 것처럼 보였습니다. 손을 펴고 쥐는 간단한 동작으로 구조체가 바로 반응하도록 셰이더와 제스처 연결을 여러 번 조정했습니다.</p>
       </div>
     </div>
   </section>
@@ -535,8 +534,8 @@
             <div><dt>Project</dt><dd>Breathing Structure</dd></div>
             <div><dt>Type</dt><dd>Interactive Installation</dd></div>
             <div><dt>Year</dt><dd>2026</dd></div>
-            <div><dt>Role</dt><dd>Creative Developer (기획 · 설계 · 개발)</dd></div>
-            <div><dt>Tools</dt><dd>Vite · React · Three.js · WebGL</dd></div>
+            <div><dt>Role</dt><dd>Creative Developer (기획, 설계, 개발)</dd></div>
+            <div><dt>Tools</dt><dd>Vite, React, Three.js, GLSL, MediaPipe</dd></div>
             <div><dt>Deploy</dt><dd>Vercel</dd></div>
             <div><dt>Live</dt><dd><a href="https://breathing-structure.vercel.app/" target="_blank" rel="noopener" style="color:var(--bs); font-weight:700; text-decoration:none;">breathing-structure.vercel.app ↗</a></dd></div>
           </dl>
@@ -549,7 +548,7 @@
             </div>
             <div style="text-align:right;">
               <p class="bs-next__lbl">Next Project</p>
-              <a href="edustay.html" class="bs-next__link bs-next__link--next">Edustay <span class="bs-next__arrow">→</span></a>
+              <a href="kk.html" class="bs-next__link bs-next__link--next">KK Futsal Park <span class="bs-next__arrow">→</span></a>
             </div>
           </div>
         </div>

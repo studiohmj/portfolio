@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
-  <title>HANDS BLOOM — Jang Hoon Min</title>
-  <meta name="description" content="HANDS BLOOM — 손의 움직임으로 꽃을 피우는 MediaPipe 기반 핸드 인터렉션 웹 경험" />
+  <title>HANDS BLOOM | Jang Hoon Min</title>
+  <meta name="description" content="HANDS BLOOM | 손의 움직임으로 꽃을 피우는 MediaPipe 기반 핸드 인터렉션 웹 경험" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -137,7 +137,7 @@
     /* ── Insight ── */
     .bl-insight {
       margin: 48px 0; padding: 32px 40px;
-      border-left: 3px solid var(--bl);
+      border-left: none;
       background: var(--bl-lt);
     }
     .bl-insight__label {
@@ -330,7 +330,7 @@
           <div><dt>Role</dt><dd>Interaction Designer / Developer</dd></div>
           <div><dt>Type</dt><dd>Interactive Web</dd></div>
           <div><dt>Year</dt><dd>2026</dd></div>
-          <div><dt>Tools</dt><dd>HTML · CSS · JavaScript · MediaPipe</dd></div>
+          <div><dt>Tools</dt><dd>HTML, CSS, JavaScript, MediaPipe</dd></div>
           <div><dt>Live</dt><dd><a href="https://studiohmj.github.io/Hands-bloom/" target="_blank" rel="noopener" class="bl-hero__live">Experience ↗</a></dd></div>
         </dl>
       </div>
@@ -345,15 +345,14 @@
   <!-- 01 Background -->
   <section class="bl-section">
     <div class="container">
-      <span class="bl-section__num fade-in">01 — Background</span>
+      <span class="bl-section__num fade-in">Background</span>
       <div class="bl-split fade-in">
         <div>
-          <div class="bl-split__num">01</div>
           <div class="bl-split__title">아이디어</div>
         </div>
         <div>
-          <p class="bl-lead">손의 개폐가 꽃의 개화를 제어합니다.</p>
-          <p class="bl-body">MediaPipe로 손을 실시간 추적하고, 21개 랜드마크 데이터를 파티클 시스템에 매핑했습니다. 웹캠 없는 환경을 위한 마우스·터치 대체 모드도 포함합니다.</p>
+          <p class="bl-lead">손을 펴면 꽃이 피고, 쥐면 시듭니다.</p>
+          <p class="bl-body">MediaPipe로 손을 실시간 추적하고, 21개 랜드마크 데이터를 파티클 시스템에 매핑했습니다. 웹캠 없는 환경을 위한 마우스, 터치 대체 모드도 포함합니다.</p>
 
           <div class="bl-insight fade-in">
             <div class="bl-insight__label">Concept</div>
@@ -364,13 +363,16 @@
     </div>
   </section>
 
+  <div class="fade-in" style="max-width:1440px;margin:0 auto;padding:0 0 0;">
+    <img src="메인 이미지/12. 인터렉션 프로젝트/hands bloom 2p.webp" alt="Hands Bloom 콘셉트와 제스처 정리" style="width:100%;height:auto;display:block;" />
+  </div>
+
   <!-- 02 Interaction Design -->
   <section class="bl-section bl-section--alt">
     <div class="container">
-      <span class="bl-section__num fade-in">02 — Interaction Design</span>
+      <span class="bl-section__num fade-in">Interaction Design</span>
       <div class="bl-split fade-in">
         <div>
-          <div class="bl-split__num">02</div>
           <div class="bl-split__title">제스처</div>
         </div>
         <div>
@@ -379,37 +381,31 @@
 
           <div class="bl-gestures fade-in">
             <div class="bl-gesture">
-              <span class="bl-gesture__sym">✋</span>
               <p class="bl-gesture__name">Open Hand</p>
               <span class="bl-gesture__tag bl-gesture__tag--pink">BLOOM</span>
               <p class="bl-gesture__desc">손 펼침 각도에 비례해 꽃이 개화합니다.</p>
             </div>
             <div class="bl-gesture">
-              <span class="bl-gesture__sym">✊</span>
               <p class="bl-gesture__name">Closed Fist</p>
               <span class="bl-gesture__tag bl-gesture__tag--dim">WITHER</span>
               <p class="bl-gesture__desc">주먹을 쥐면 꽃이 닫힙니다.</p>
             </div>
             <div class="bl-gesture">
-              <span class="bl-gesture__sym">✌</span>
               <p class="bl-gesture__name">Peace Sign</p>
               <span class="bl-gesture__tag bl-gesture__tag--pink">PETAL STORM</span>
               <p class="bl-gesture__desc">꽃잎 파티클이 화면 전체로 퍼집니다.</p>
             </div>
             <div class="bl-gesture">
-              <span class="bl-gesture__sym">☝</span>
               <p class="bl-gesture__name">Pointing</p>
               <span class="bl-gesture__tag bl-gesture__tag--gold">SPOTLIGHT + MOVE</span>
               <p class="bl-gesture__desc">검지 방향으로 꽃이 이동합니다.</p>
             </div>
             <div class="bl-gesture">
-              <span class="bl-gesture__sym">🤘</span>
               <p class="bl-gesture__name">Rock Sign</p>
               <span class="bl-gesture__tag bl-gesture__tag--purple">COLOR SHIFT</span>
               <p class="bl-gesture__desc">0.6초 유지 시 색상 테마가 전환됩니다.</p>
             </div>
             <div class="bl-gesture">
-              <span class="bl-gesture__sym">🖐</span>
               <p class="bl-gesture__name">Hand Position</p>
               <span class="bl-gesture__tag bl-gesture__tag--pink">PARALLAX</span>
               <p class="bl-gesture__desc">손 위치에 따라 꽃의 중심이 이동합니다.</p>
@@ -423,35 +419,30 @@
   <!-- 03 Design Decisions -->
   <section class="bl-section">
     <div class="container">
-      <span class="bl-section__num fade-in">03 — Design Decisions</span>
+      <span class="bl-section__num fade-in">Design Decisions</span>
       <div class="bl-split fade-in">
         <div>
-          <div class="bl-split__num">03</div>
           <div class="bl-split__title">주요 결정</div>
         </div>
         <div>
-          <p class="bl-lead">Four implementation decisions.</p>
+          <p class="bl-lead">구현하면서 정한 네 가지</p>
 
           <div class="bl-decisions fade-in">
             <div class="bl-decision">
-              <span class="bl-decision__num">01</span>
-              <p class="bl-decision__title">마우스·터치 대체 모드</p>
+              <p class="bl-decision__title">마우스, 터치 대체 모드</p>
               <p class="bl-decision__body">카메라 미허용 환경을 위한 대체 인터랙션입니다. 스크롤로 개화 제어, 더블클릭으로 파티클 발산, 홀드로 시들기를 구현했습니다.</p>
             </div>
             <div class="bl-decision">
-              <span class="bl-decision__num">02</span>
               <p class="bl-decision__title">8가지 오브젝트</p>
               <p class="bl-decision__body">Peony, Lotus, Crystal, Dandelion, Rose, Jellyfish, Snowflake, Orbit. 오브젝트마다 파티클 구조와 움직임이 다릅니다.</p>
             </div>
             <div class="bl-decision">
-              <span class="bl-decision__num">03</span>
               <p class="bl-decision__title">비디오 홈 화면</p>
-              <p class="bl-decision__body">인터랙션 진입 전 영상으로 경험의 성격을 먼저 보여줍니다. 카메라 권한 요청은 그 이후에 진행됩니다.</p>
+              <p class="bl-decision__body">시작 전에 영상으로 어떤 작업인지 먼저 보여 주고, 그다음 카메라 권한을 요청합니다.</p>
             </div>
             <div class="bl-decision">
-              <span class="bl-decision__num">04</span>
               <p class="bl-decision__title">다크 배경</p>
-              <p class="bl-decision__body">파티클의 발광감 극대화를 위해 다크 배경을 채택했습니다.</p>
+              <p class="bl-decision__body">파티클 빛이 잘 보이도록 어두운 배경을 썼습니다.</p>
             </div>
           </div>
         </div>
@@ -462,9 +453,9 @@
   <!-- 04 Visual System -->
   <section class="bl-section bl-section--alt">
     <div class="container">
-      <span class="bl-section__label fade-in">04 — Visual System</span>
-      <p class="bl-lead fade-in">Pink palette on black.</p>
-      <p class="bl-body fade-in">핑크·마젠타 계열을 기본 컬러로 사용했습니다. 록 사인 제스처 또는 Color 버튼으로 테마를 전환할 수 있습니다.</p>
+      <span class="bl-section__label fade-in">Visual System</span>
+      <p class="bl-lead fade-in">검은 바탕 위의 핑크</p>
+      <p class="bl-body fade-in">핑크, 마젠타 계열을 기본 컬러로 사용했습니다. 록 사인 제스처 또는 Color 버튼으로 테마를 전환할 수 있습니다.</p>
 
       <div class="bl-swatches fade-in">
         <div class="bl-swatch" style="background:#060207;">
@@ -500,27 +491,31 @@
       </div>
 
       <span class="bl-section__label fade-in" style="margin-top:64px; margin-bottom:16px;">Selectable Objects</span>
-      <p class="bl-body fade-in">오브젝트마다 파티클 구조와 움직임 로직이 다릅니다. 같은 제스처 입력에도 선택된 오브젝트에 따라 전혀 다른 시각 출력이 나옵니다.</p>
+      <p class="bl-body fade-in">오브젝트마다 파티클 모양과 움직임이 달라서, 같은 제스처라도 고른 오브젝트에 따라 다르게 보입니다.</p>
       <div class="bl-objects fade-in">
-        <div class="bl-object"><span class="bl-object__num">01</span><span class="bl-object__name">Peony</span></div>
-        <div class="bl-object"><span class="bl-object__num">02</span><span class="bl-object__name">Lotus</span></div>
-        <div class="bl-object"><span class="bl-object__num">03</span><span class="bl-object__name">Crystal</span></div>
-        <div class="bl-object"><span class="bl-object__num">04</span><span class="bl-object__name">Dandelion</span></div>
-        <div class="bl-object"><span class="bl-object__num">05</span><span class="bl-object__name">Rose</span></div>
-        <div class="bl-object"><span class="bl-object__num">06</span><span class="bl-object__name">Jellyfish</span></div>
-        <div class="bl-object"><span class="bl-object__num">07</span><span class="bl-object__name">Snowflake</span></div>
-        <div class="bl-object"><span class="bl-object__num">08</span><span class="bl-object__name">Orbit</span></div>
+        <div class="bl-object"><span class="bl-object__name">Peony</span></div>
+        <div class="bl-object"><span class="bl-object__name">Lotus</span></div>
+        <div class="bl-object"><span class="bl-object__name">Crystal</span></div>
+        <div class="bl-object"><span class="bl-object__name">Dandelion</span></div>
+        <div class="bl-object"><span class="bl-object__name">Rose</span></div>
+        <div class="bl-object"><span class="bl-object__name">Jellyfish</span></div>
+        <div class="bl-object"><span class="bl-object__name">Snowflake</span></div>
+        <div class="bl-object"><span class="bl-object__name">Orbit</span></div>
       </div>
     </div>
   </section>
+
+  <div class="fade-in" style="max-width:1440px;margin:0 auto;padding:0 0 0;">
+    <img src="메인 이미지/12. 인터렉션 프로젝트/hands bloom 3p.webp" alt="Hands Bloom 체험 화면과 8가지 오브젝트" style="width:100%;height:auto;display:block;" />
+  </div>
 
   <!-- Reflection -->
   <section class="bl-reflection">
     <div class="container">
       <div class="bl-reflection__inner fade-in">
         <span class="bl-reflection__label">Reflection</span>
-        <p class="bl-reflection__quote">"설명 없이도 작동하는 인터랙션."</p>
-        <p class="bl-reflection__body">진입 즉시 손 제스처가 꽃에 반응하는 것을 보여주는 것이 핵심이었습니다. 기능 확장보다 첫 반응의 즉각성과 명확성에 집중했습니다.</p>
+        <p class="bl-reflection__quote">"설명을 읽지 않아도 바로 반응하게"</p>
+        <p class="bl-reflection__body">화면에 들어오자마자 손을 움직이면 꽃이 반응하도록 하는 데 가장 신경 썼습니다. 기능을 늘리기보다 첫 반응이 빠르고 분명하게 보이도록 다듬었습니다.</p>
       </div>
     </div>
   </section>
@@ -532,11 +527,11 @@
         <div>
           <span class="bl-credits__label">Credits</span>
           <dl class="bl-credits__dl">
-            <div><dt>Project</dt><dd>HANDS BLOOM — Hand Interaction</dd></div>
+            <div><dt>Project</dt><dd>HANDS BLOOM, Hand Interaction</dd></div>
             <div><dt>Type</dt><dd>Interactive Web Experience</dd></div>
             <div><dt>Year</dt><dd>2026</dd></div>
             <div><dt>Role</dt><dd>Interaction Designer / Developer</dd></div>
-            <div><dt>Tools</dt><dd>HTML · CSS · JavaScript · MediaPipe</dd></div>
+            <div><dt>Tools</dt><dd>HTML, CSS, JavaScript, MediaPipe</dd></div>
             <div><dt>Live</dt><dd><a href="https://studiohmj.github.io/Hands-bloom/" target="_blank" rel="noopener" style="color:var(--bl); font-weight:700; text-decoration:none;">Experience HANDS BLOOM ↗</a></dd></div>
           </dl>
         </div>

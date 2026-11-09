@@ -1442,7 +1442,8 @@ html.dark-mode .about__photo--dark  { display: block; }
 
 /* All project cards — 16:9 to match 1920×1080 thumbnails */
 #brandingContent .proj__image,
-#uxuiContent .proj__image {
+#uxuiContent .proj__image,
+#webContent .proj__image {
   aspect-ratio: 16 / 9;
 }
 
@@ -1450,7 +1451,7 @@ html.dark-mode .about__photo--dark  { display: block; }
 #brandingContent { counter-reset: brand-n; }
 #brandingContent .proj { counter-increment: brand-n; }
 #brandingContent .proj__meta::before {
-  content: counter(brand-n, decimal-leading-zero) ' · ';
+  content: none;
   color: var(--t3);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -1459,7 +1460,7 @@ html.dark-mode .about__photo--dark  { display: block; }
 #uxuiContent { counter-reset: uxui-n; }
 #uxuiContent .proj { counter-increment: uxui-n; }
 #uxuiContent .proj__meta::before {
-  content: counter(uxui-n, decimal-leading-zero) ' · ';
+  content: none;
   color: var(--t3);
   font-weight: 700;
   letter-spacing: 0.04em;

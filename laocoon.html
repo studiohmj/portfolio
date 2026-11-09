@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if(localStorage.getItem('portfolio-theme-v2')==="dark")document.documentElement.classList.add("dark-mode");</script>
+  <title>The Statue of Laocoön | Jang Hoon Min</title>
+  <meta name="description" content="The Statue of Laocoön | 청동 말 조각상을 Three.js로 보여 주는 3D 웹사이트" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <style>
+    body {
+      font-family: 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    em { font-family: inherit; font-style: normal; color: inherit; }
+
+    :root {
+      --iw: #c98a4b;
+      --iw-dk: #1255D4;
+      --iw-lt: #EBF2FF;
+      --iw-or: #FF6B35;
+      --iw-dark: #0D1B40;
+    }
+
+    /* ── Hero ── */
+    .iw-hero { padding: 120px 0 80px; border-bottom: 1px solid var(--border); }
+    .iw-hero__inner { max-width: 860px; }
+    .iw-hero__back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--t3); text-decoration: none; margin-bottom: 48px; transition: color 0.2s;
+    }
+    .iw-hero__back:hover { color: var(--t1); }
+    .iw-hero__kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .iw-hero__cat {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--iw); background: color-mix(in srgb, var(--iw) 10%, transparent);
+      padding: 4px 10px; border-radius: 2px;
+    }
+    .iw-hero__year { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: var(--t3); }
+    .iw-hero__title {
+      font-size: clamp(52px, 8vw, 96px); font-weight: 900; letter-spacing: -0.04em;
+      line-height: 0.95; color: var(--iw); margin-bottom: 8px;
+    }
+    .iw-hero__title span { display: inline; }
+    .iw-hero__title .iw-accent { color: inherit; }
+    .iw-hero__tagline {
+      font-size: clamp(16px, 2.2vw, 20px); color: var(--t2); letter-spacing: -0.02em;
+      line-height: 1.6; margin: 28px 0 48px; max-width: 600px;
+    }
+    .iw-hero__dl {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+    .iw-hero__dl > div {
+      padding: 1.25rem 2.5rem 1.25rem 0;
+      margin-right: 2.5rem;
+      border-right: 1px solid var(--border);
+      border-top: 3px solid transparent;
+    }
+    .iw-hero__dl > div:first-child { border-top-color: var(--iw); }
+    .iw-hero__dl > div:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .iw-hero__dl dt {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--t3); margin-bottom: 6px;
+    }
+    .iw-hero__dl dd { font-size: 14px; font-weight: 600; color: var(--t1); letter-spacing: -0.01em; }
+    .iw-hero__live {
+      color: var(--iw); text-decoration: none; font-size: 14px; font-weight: 700;
+      display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s;
+    }
+    .iw-hero__live:hover { opacity: 0.7; }
+
+    /* ── Cover ── */
+    .iw-cover { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-alt); }
+    .iw-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── Section wrapper ── */
+    .iw-section { padding: 96px 0; border-top: 1px solid var(--border); }
+    .iw-section--alt { background: color-mix(in srgb, var(--iw) 3%, var(--bg)); }
+    .iw-section__num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--iw); margin-bottom: 48px; display: block;
+    }
+    .iw-section__label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--t3); margin-bottom: 48px; display: block;
+    }
+
+    /* ── Split layout ── */
+    .iw-split { display: grid; grid-template-columns: 200px 1fr; gap: 80px; align-items: start; }
+    .iw-split__sticky { position: static; }
+    .iw-split__num {
+      font-size: 64px; font-weight: 900; letter-spacing: -0.04em; line-height: 1;
+      color: color-mix(in srgb, var(--iw) 15%, transparent); margin-bottom: 12px;
+    }
+    html.dark-mode .iw-split__num {
+      color: color-mix(in srgb, var(--iw) 40%, transparent);
+    }
+    .iw-split__title {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--t2);
+    }
+
+    /* ── Typography ── */
+    .iw-lead {
+      font-size: clamp(22px, 3vw, 32px); font-weight: 700; letter-spacing: -0.03em;
+      line-height: 1.4; color: var(--t1); margin-bottom: 28px;
+    }
+    .iw-body { font-size: 16px; line-height: 1.9; color: var(--t2); letter-spacing: -0.01em; margin-bottom: 16px; }
+
+    /* ── Insight ── */
+    .iw-insight {
+      margin: 48px 0; padding: 32px 40px;
+      border-left: none;
+      background: color-mix(in srgb, var(--iw) 6%, transparent);
+    }
+    .iw-insight__label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--iw); margin-bottom: 16px;
+    }
+    .iw-insight__text {
+      font-size: clamp(18px, 2.2vw, 24px); font-weight: 700; letter-spacing: -0.025em;
+      line-height: 1.55; color: var(--t1);
+    }
+
+    /* ── Observation list ── */
+    .iw-obs { display: flex; flex-direction: column; gap: 2px; margin-top: 48px; }
+    .iw-obs__item {
+      background: var(--bg); padding: 28px 32px;
+      border-left: 3px solid transparent; transition: border-color 0.2s;
+    }
+    .iw-obs__item:hover { border-color: var(--iw); }
+    .iw-obs__num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--iw); display: block; margin-bottom: 8px;
+    }
+    .iw-obs__title {
+      font-size: 17px; font-weight: 700; color: var(--t1); letter-spacing: -0.02em; margin-bottom: 6px;
+    }
+    .iw-obs__body { font-size: 14px; line-height: 1.75; color: var(--t2); }
+
+    /* ── Design decisions grid ── */
+    .iw-decisions { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; }
+    .iw-decision {
+      background: var(--bg); padding: 36px 40px;
+      border-bottom: 2px solid transparent; transition: border-color 0.2s;
+    }
+    .iw-decision:hover { border-color: var(--iw); }
+    .iw-decision__num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--iw); margin-bottom: 20px; display: block;
+    }
+    .iw-decision__title {
+      font-size: 18px; font-weight: 800; color: var(--t1); letter-spacing: -0.025em;
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .iw-decision__body { font-size: 14px; line-height: 1.8; color: var(--t2); }
+
+    /* ── Stats ── */
+    .iw-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 56px; }
+    .iw-stat { background: var(--bg); padding: 40px 32px; text-align: center; }
+    .iw-stat__num {
+      font-size: clamp(36px, 5vw, 52px); font-weight: 900; letter-spacing: -0.04em;
+      color: var(--iw); line-height: 1; margin-bottom: 8px;
+    }
+    .iw-stat__unit { font-size: 0.48em; font-weight: 700; vertical-align: text-top; margin-top: 8px; display: inline-block; }
+    .iw-stat__label { font-size: 13px; color: var(--t2); font-weight: 500; margin-top: 8px; }
+
+    /* ── Visual swatches ── */
+    .iw-swatches { display: flex; gap: 2px; margin-top: 48px; }
+    .iw-swatch {
+      flex: 1; height: 100px; display: flex; align-items: flex-end; padding: 12px 14px;
+    }
+    .iw-swatch__hex { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; }
+    .iw-swatch__name { font-size: 10px; letter-spacing: 0.05em; margin-top: 2px; opacity: 0.8; }
+
+    .iw-color-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 2px; }
+    .iw-color-note { background: var(--bg); padding: 24px 28px; }
+    .iw-color-note__dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 14px; }
+    .iw-color-note__title { font-size: 13px; font-weight: 700; color: var(--t1); margin-bottom: 6px; letter-spacing: -0.01em; }
+    .iw-color-note__body { font-size: 12px; line-height: 1.7; color: var(--t2); }
+
+    /* ── Philosophy grid ── */
+    .iw-philosophy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
+    .iw-phi { background: var(--bg); padding: 36px 32px; text-align: center; }
+    .iw-phi__situation {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--t3); margin-bottom: 14px;
+    }
+    .iw-phi__text { font-size: 18px; font-weight: 800; color: var(--t1); letter-spacing: -0.02em; margin-bottom: 8px; }
+    .iw-phi__sub { font-size: 13px; color: var(--t2); line-height: 1.6; }
+
+    /* ── Outcome grid ── */
+    .iw-outcome { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 48px; }
+    .iw-outcome__item { background: var(--bg); padding: 36px 40px; }
+    .iw-outcome__label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--t3); margin-bottom: 16px; display: block;
+    }
+    .iw-outcome__title { font-size: 17px; font-weight: 700; color: var(--t1); letter-spacing: -0.02em; margin-bottom: 10px; }
+    .iw-outcome__body { font-size: 14px; color: var(--t2); line-height: 1.75; }
+
+    /* ── Reflection ── */
+    .iw-reflection { background: var(--iw-dark); padding: 120px 0; }
+    .iw-reflection__inner { max-width: 720px; }
+    .iw-reflection__label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+      color: #c98a4b; margin-bottom: 40px; display: block;
+    }
+    .iw-reflection__quote {
+      font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; letter-spacing: -0.03em;
+      line-height: 1.45; color: rgba(255,255,255,0.95); margin-bottom: 48px;
+    }
+    .iw-reflection__body { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.55); }
+
+    /* ── Credits ── */
+    .iw-credits { padding: 80px 0 56px; border-bottom: 1px solid var(--border); }
+    .iw-credits__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .iw-credits__label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--t3); margin-bottom: 28px; display: block;
+    }
+    .iw-credits__dl { display: flex; flex-direction: column; gap: 12px; }
+    .iw-credits__dl div { display: flex; gap: 20px; align-items: baseline; }
+    .iw-credits__dl dt {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--t3); min-width: 56px; flex-shrink: 0;
+    }
+    .iw-credits__dl dd { font-size: 14px; color: var(--t1); font-weight: 500; }
+
+    /* ── Next nav ── */
+    .iw-next {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-top: 56px; border-top: 1px solid var(--border); padding-top: 28px;
+    }
+    .iw-next__lbl {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--t3); margin-bottom: 12px;
+    }
+    .iw-next__link {
+      display: inline-flex; align-items: center; gap: 10px; font-weight: 700;
+      letter-spacing: -0.025em; text-decoration: none; transition: color 0.2s;
+    }
+    .iw-next__link--prev { font-size: 20px; color: var(--t3); }
+    .iw-next__link--next { font-size: 28px; color: var(--t1); }
+    .iw-next__link--next:hover { color: var(--iw); }
+    .iw-next__arrow { transition: transform 0.2s; }
+    .iw-next__link--next:hover .iw-next__arrow { transform: translateX(4px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .iw-split { grid-template-columns: 1fr; gap: 40px; }
+      .iw-split__sticky { position: static; }
+      .iw-decisions { grid-template-columns: 1fr; }
+      .iw-stats { grid-template-columns: 1fr 1fr; }
+      .iw-color-notes { grid-template-columns: 1fr; }
+      .iw-philosophy { grid-template-columns: 1fr; }
+      .iw-outcome { grid-template-columns: 1fr; }
+      .iw-credits__inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 600px) {
+      .iw-hero { padding: 80px 0 60px; }
+      .iw-swatches { flex-wrap: wrap; }
+      .iw-swatch { flex: 0 0 calc(50% - 1px); }
+      .iw-next__link--next { font-size: 22px; }
+    }
+  
+    .iw-section__label { margin-bottom: 40px; }
+    .wd-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .wd-gallery--one { grid-template-columns: 1fr; }
+    .wd-fig img { width: 100%; display: block; border-radius: 6px; box-shadow: 0 0 0 1px var(--border); }
+    .wd-fig figcaption { font-size: 13px; color: var(--t3); margin-top: 12px; letter-spacing: -0.01em; }
+    .wd-fig figcaption b { color: var(--t1); font-weight: 600; margin-right: 8px; }
+    @media (max-width: 900px) { .wd-gallery { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      Jang Hoon Min
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#awards">Awards &amp; Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="proj-pager">
+    <a href="orvale.html" class="proj-pager__link">← Orvale</a>
+    <a href="index.html#work" class="proj-pager__all">All Work</a>
+    <a href="dragon-jelly.html" class="proj-pager__link">Dragon Jelly →</a>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="profile.html" class="mobile-link">Profile</a></li>
+      <li><a href="index.html#work" class="mobile-link">Work</a></li>
+      <li><a href="index.html#awards" class="mobile-link">Awards &amp; Projects</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="iw-hero">
+    <div class="container">
+      <div class="iw-hero__inner">
+        <a href="orvale.html" class="iw-hero__back">← Orvale</a>
+        <div class="iw-hero__kicker fade-in">
+          <span class="iw-hero__cat">3D Web, Personal</span>
+          <span class="iw-hero__year">2026</span>
+        </div>
+        <h1 class="iw-hero__title fade-in">Laocoön</h1>
+        <p class="iw-hero__tagline fade-in">청동 조각상을 주제로 만든 3D 웹사이트입니다.<br>스크롤을 내리면 배경과 장면이 함께 바뀝니다.</p>
+        <dl class="iw-hero__dl fade-in"><div><dt>Role</dt><dd>Web Designer</dd></div><div><dt>Type</dt><dd>Personal Project</dd></div><div><dt>Year</dt><dd>2026</dd></div><div><dt>Tools</dt><dd>HTML, CSS, Three.js, GLSL</dd></div><div><dt>Live</dt><dd><a href="https://studiohmj.github.io/3D-web2/" target="_blank" rel="noopener" class="iw-hero__live">Visit Site ↗</a></dd></div></dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="iw-cover fade-in">
+    <img src="메인 이미지/13. 웹디자인/laocoon 썸네일.webp" alt="The Statue of Laocoön" />
+  </div>
+
+  <section class="iw-section">
+    <div class="container">
+      <span class="iw-section__label fade-in">Overview</span>
+      <div class="iw-split fade-in">
+        <div class="iw-split__sticky"><div class="iw-split__title">개요</div></div>
+        <div>
+          <p class="iw-lead">청동 말 3D 모델을 중심으로 네 장면을 이었습니다.</p>
+          <p class="iw-body">Three.js로 청동 말 모델을 불러와 화면 중앙에 두고, 스크롤에 따라 Bronze and Time, Marble Emotion, Liquid Metal, Eternal Moment 네 장면이 차례로 나타납니다.</p><p class="iw-body">배경은 셰이더로 직접 그렸습니다. 스크롤 위치에 따라 물결 모양 빛줄기가 휘고 색이 바뀌며, 마우스 위치에 따라 조금씩 움직입니다.</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="iw-section iw-section--alt">
+    <div class="container">
+      <span class="iw-section__label fade-in">Design</span>
+      <div class="iw-split fade-in">
+        <div class="iw-split__sticky"><div class="iw-split__title">구성</div></div>
+        <div>
+          <p class="iw-lead">스크롤 하나로 모델, 배경, 글이 함께 움직이게 했습니다.</p>
+          <div class="iw-decisions fade-in"><div class="iw-decision"><p class="iw-decision__title">스크롤 보간</p><p class="iw-decision__body">스크롤 값을 그대로 쓰지 않고 부드럽게 따라가도록 보간해 장면 전환이 끊기지 않게 했습니다.</p></div><div class="iw-decision"><p class="iw-decision__title">배경 셰이더</p><p class="iw-decision__body">사인, 코사인으로 좌표를 비틀어 둥근 빛줄기를 만들고, 스크롤 진행도에 따라 색을 섞었습니다.</p></div><div class="iw-decision"><p class="iw-decision__title">불꽃 입자</p><p class="iw-decision__body">작은 입자들이 떠다니다가 스크롤을 빠르게 내리면 더 빠르게 흩어지도록 했습니다.</p></div><div class="iw-decision"><p class="iw-decision__title">글꼴</p><p class="iw-decision__body">제목은 Italiana, 본문은 Outfit을 사용해 조각상의 고전적인 분위기에 맞췄습니다.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="iw-section">
+    <div class="container">
+      <span class="iw-section__label fade-in">Screens</span>
+      <div class="wd-gallery fade-in"><figure class="wd-fig"><img src="메인 이미지/13. 웹디자인/laocoon 1.webp" alt="Bronze" /><figcaption><b>Bronze</b>첫 장면</figcaption></figure><figure class="wd-fig"><img src="메인 이미지/13. 웹디자인/laocoon 2.webp" alt="Marble Emotion" /><figcaption><b>Marble Emotion</b>두 번째 장면</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section class="iw-credits">
+    <div class="container">
+      <div class="iw-credits__inner fade-in">
+        <div>
+          <span class="iw-credits__label">Credits</span>
+          <dl class="iw-credits__dl"><div><dt>Project</dt><dd>The Statue of Laocoön</dd></div><div><dt>Type</dt><dd>개인 작업, 3D 웹 디자인</dd></div><div><dt>Year</dt><dd>2026</dd></div><div><dt>Role</dt><dd>기획, 디자인, 개발</dd></div><div><dt>Tools</dt><dd>HTML, CSS, Three.js, GLSL</dd></div><div><dt>Live</dt><dd><a href="https://studiohmj.github.io/3D-web2/" target="_blank" rel="noopener" style="color:var(--iw); font-weight:700; text-decoration:none;">studiohmj.github.io/3D-web2 ↗</a></dd></div></dl>
+        </div>
+        <div>
+          <div class="iw-next">
+            <div>
+              <p class="iw-next__lbl">Previous</p>
+              <a href="orvale.html" class="iw-next__link iw-next__link--prev">← Orvale</a>
+            </div>
+            <div style="text-align:right;">
+              <p class="iw-next__lbl">Next Project</p>
+              <a href="dragon-jelly.html" class="iw-next__link iw-next__link--next">Dragon Jelly <span class="iw-next__arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 Jang Hoon Min. All rights reserved.</p>
+        <a href="index.html#work" class="footer__back-link">← Back to Work</a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

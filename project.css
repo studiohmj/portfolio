@@ -387,6 +387,7 @@
   box-sizing: border-box;
 }
 .img-section__label::after {
+  display: none;
   content: '';
   flex: 1;
   height: 1px;
